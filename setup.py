@@ -62,9 +62,6 @@ setup(name='rer.subsites',
       test_suite='rer.subsites.tests.test_docs.test_suite',
       entry_points="""
       # -*- entry_points -*-
-      [z3c.autoinclude.plugin]
-      target = plone
       """,
-      setup_requires=["PasteScript"],
       paster_plugins=["ZopeSkel"],
       )

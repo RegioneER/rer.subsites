@@ -5,6 +5,9 @@
 
   <include package="plone.app.contentmenu" />
 
-  <!-- -*- extra stuff goes here -*- -->
+  <browser:resource
+        name="subsite.png"
+        file="subsite.png"
+        />
 
 </configure>

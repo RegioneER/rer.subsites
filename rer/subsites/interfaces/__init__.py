@@ -1,1 +1,2 @@
-# -*- extra stuff goes here -*-
+from subsite import IRERSubsite
+IRERSubsite

@@ -4,5 +4,5 @@
 PROJECTNAME = 'rer.subsites'
 
 ADD_PERMISSIONS = {
-    # -*- extra stuff goes here -*-
+    'RERSubsite': 'rer.subsites: Add RERSubsite',
 }
