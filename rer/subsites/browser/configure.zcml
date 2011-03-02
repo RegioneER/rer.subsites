@@ -4,6 +4,15 @@
     i18n_domain="rer.subsites">
 
   <include package="plone.app.contentmenu" />
+  
+  <!-- viewlet titolo -->
+  <browser:viewlet
+      name="rer.subsite_title"
+      manager="plone.app.layout.viewlets.interfaces.IPortalTop"
+      class=".viewlets.SubsiteTitleViewlet"
+      layer="..interfaces.subsite.IRERSubsiteLayer"
+      permission="zope2.View"
+      />
 
   <browser:resource
         name="subsite.png"

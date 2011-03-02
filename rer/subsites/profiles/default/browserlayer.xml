@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<layers>
+    <layer name="rer.er_sociale_theme"
+           interface="rer.er_sociale_theme.browser.interfaces.IPortaleTematicoThemeLayer" />
+</layers>
