@@ -21,6 +21,11 @@
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
   
-  <!-- -*- extra stuff goes here -*- -->
+  <genericsetup:importStep
+      name="rer.er_subsites"
+      title="RER ER Subsites configuration"
+      description="Configure er subsites properties"
+      handler="rer.subsites.exportimport.import_various"
+      />
 
 </configure>

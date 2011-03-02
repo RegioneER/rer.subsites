@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2011-03-01 16:52+0000\n"
+"POT-Creation-Date: 2011-03-02 10:55+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: Andrea Cecchi <andrea.cecchi@redturtle.net>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -43,4 +43,14 @@ msgstr "Sottosito"
 #: ./profiles/default/types/RERSubsite.xml
 msgid "View"
 msgstr ""
+
+#. Default: "News archive"
+#: ./content/subsite.py:22
+msgid "rer_subsites_newsarchivefolder"
+msgstr "Archivio news"
+
+#. Default: "An archive for the news. If this field is set, the news in this subsite will show his value in \"News archive\" link"
+#: ./content/subsite.py:23
+msgid "rer_subsites_newsarchivefolder_help"
+msgstr "Un archivio per le news. Se questo campo è impostato, le notizie di questo sottosito mostreranno il suo contenuto nel link \"Archivio news\""
 
