@@ -1,2 +1,3 @@
-from subsite import IRERSubsite
+from subsite import IRERSubsite, IRERSubsiteLayer
 IRERSubsite
+IRERSubsiteLayer

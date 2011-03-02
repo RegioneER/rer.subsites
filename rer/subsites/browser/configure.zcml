@@ -10,7 +10,7 @@
       name="rer.subsite_title"
       manager="plone.app.layout.viewlets.interfaces.IPortalTop"
       class=".viewlets.SubsiteTitleViewlet"
-      layer="..interfaces.subsite.IRERSubsiteLayer"
+      layer="..interfaces.IRERSubsiteLayer"
       permission="zope2.View"
       />
 
