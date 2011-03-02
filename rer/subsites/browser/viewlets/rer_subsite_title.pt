@@ -1,3 +1,3 @@
 <div id="subsiteTitle">
-    <h2>sede di roma</h2>
+    <h2 tal:content="view/subsite_title">sede di roma</h2>
 </div>
