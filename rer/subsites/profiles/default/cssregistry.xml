@@ -7,6 +7,6 @@
     id="rer_subsites.css"
     media="screen" rel="stylesheet" rendering="import"
     cacheable="True" compression="safe" cookable="True"
-    enabled="1" expression="python:object.meta_type == 'RERSubsite'"/>
+    enabled="1" expression="python:object.restrictedTraverse('@@show-subsitescss')()"/>
 	
 </object>

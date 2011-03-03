@@ -5,6 +5,15 @@
 
   <include package="plone.app.contentmenu" />
   
+  <!-- VIEW TO CHECK AVAILABILITY OF HTE CSS -->
+  <browser:page
+        for="*"
+        name="show-subsitescss"
+        class=".show_subsitescss.View"
+        layer="..interfaces.IRERSubsiteLayer"
+        permission="zope.Public"
+        />
+  
   <!-- viewlet titolo -->
   <browser:viewlet
       name="rer.subsite_title"
