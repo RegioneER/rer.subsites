@@ -5,7 +5,7 @@
 
  <object name="subsites_stylesheets"
     meta_type="Filesystem Directory View"
-    directory="rer.er_base_theme:skins/subsites_stylesheets"/>
+    directory="rer.subsites:skins/subsites_stylesheets"/>
 
  <skin-path name="*" based-on="Plone Default">
   <layer name="subsites_stylesheets"
