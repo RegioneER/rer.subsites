@@ -22,7 +22,7 @@ long_description = (
     'Detailed Documentation\n'
     '**********************\n'
     + '\n' +
-    read('rer', 'subsites', 'README.txt')
+    open(os.path.join("docs", "HISTORY.txt")).read()
     + '\n' +
     'Contributors\n'
     '************\n'
