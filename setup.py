@@ -64,5 +64,4 @@ setup(name='rer.subsites',
       entry_points="""
       # -*- entry_points -*-
       """,
-      paster_plugins=["ZopeSkel"],
       )
