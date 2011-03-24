@@ -17,11 +17,6 @@ long_description = (
     'Change history\n'
     '**************\n'
     + '\n' +
-    read('CHANGES.txt')
-    + '\n' +
-    'Detailed Documentation\n'
-    '**********************\n'
-    + '\n' +
     open(os.path.join("docs", "HISTORY.txt")).read()
     + '\n' +
     'Contributors\n'
