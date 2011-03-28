@@ -1,6 +1,12 @@
 Changelog
 =========
 
+1.1.0 (xxxx/xx/xx)
+------------------
+
+- aagiunti campi colore e immagine testata [andrea]
+- modificato html viewlet testata [nekorin]
+
 1.0.0 (2011/03/14)
 ------------------
 

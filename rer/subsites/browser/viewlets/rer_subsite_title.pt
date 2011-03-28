@@ -1,5 +1,5 @@
 <div id="subsiteTitle" tal:define="subsite nocall:view/subsite">
 	<h2 tal:content="subsite/Title">sede di roma</h2>
-	<span tal:condition="subsite/Description"
-	      tal:content="subsite/Description">description</span>
+	<p class="subsite_description" tal:condition="subsite/Description"
+	      tal:content="subsite/Description">description</p>
 </div>
