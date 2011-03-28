@@ -1,3 +1,5 @@
-<div id="subsiteTitle">
-    <h2 tal:content="view/subsite_title">sede di roma</h2>
+<div id="subsiteTitle" tal:define="subsite nocall:view/subsite">
+	<h2 tal:content="subsite/Title">sede di roma</h2>
+	<span tal:condition="subsite/Description"
+	      tal:content="subsite/Description">description</span>
 </div>

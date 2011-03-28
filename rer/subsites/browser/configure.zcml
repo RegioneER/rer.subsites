@@ -22,7 +22,14 @@
       layer="..interfaces.IRERSubsiteLayer"
       permission="zope2.View"
       />
-
+  <!-- GESTIONE COLORE -->
+    <browser:viewlet
+      name="subsite_color.viewlet"
+      manager="plone.app.layout.viewlets.interfaces.IHtmlHeadLinks"
+      class=".viewlets.SubsiteColorViewlet"
+      layer="..interfaces.IRERSubsiteLayer"
+      permission="zope.Public"
+        />
   <browser:resource
         name="subsite.png"
         file="subsite.png"
