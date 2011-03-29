@@ -40,5 +40,11 @@ class SubsiteColorViewlet(SubsiteViewletBase):
                 styles.append("background-image:url(%s)" %image.absolute_url())
             css +=';'.join(styles)
             css +='}'
+            styles=[]
+            css+="#contentCarousel {"
+            if color:
+                styles.append("background-color:%s" %color)
+            css +=';'.join(styles)
+            css +='}'
             return_string = "<style type='text/css'>%s</style>" %css
         return return_string
