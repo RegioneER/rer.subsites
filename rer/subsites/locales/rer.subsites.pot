@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2011-03-02 10:55+0000\n"
+"POT-Creation-Date: 2011-03-29 08:47+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -47,13 +47,33 @@ msgstr ""
 msgid "View"
 msgstr ""
 
+#. Default: "Color of the subsite"
+#: ./content/subsite.py:40
+msgid "rer_subsites_color"
+msgstr ""
+
+#. Default: "Insert an hexadecimal value for the subsite color. Use the # character before the value (for example: #FFFFFF)"
+#: ./content/subsite.py:41
+msgid "rer_subsites_color_help"
+msgstr ""
+
+#. Default: "Image"
+#: ./content/subsite.py:32
+msgid "rer_subsites_image"
+msgstr ""
+
+#. Default: "Insert an image for the viewlet with the subsite name."
+#: ./content/subsite.py:33
+msgid "rer_subsites_image_help"
+msgstr ""
+
 #. Default: "News archive"
-#: ./content/subsite.py:22
+#: ./content/subsite.py:26
 msgid "rer_subsites_newsarchivefolder"
 msgstr ""
 
 #. Default: "An archive for the news. If this field is set, the news in this subsite will show his value in \"News archive\" link"
-#: ./content/subsite.py:23
+#: ./content/subsite.py:27
 msgid "rer_subsites_newsarchivefolder_help"
 msgstr ""
 

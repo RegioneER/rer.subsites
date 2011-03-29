@@ -1,5 +1,6 @@
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from plone.app.layout.viewlets.common import ViewletBase
+from rer.subsites.interfaces import IRERSubsite
 
 class SubsiteViewletBase(ViewletBase):
     def __init__(self, context, request, view, manager):
@@ -14,7 +15,7 @@ class SubsiteViewletBase(ViewletBase):
     
     def getSubsiteObj(self):
         for elem in self.context.aq_inner.aq_chain:
-            if getattr(elem,'portal_type','') == 'RERSubsite':
+            if IRERSubsite.providedBy(elem):
                 return elem
         return None
     
