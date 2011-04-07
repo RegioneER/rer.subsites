@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.1.1 (2011/04/???)
+1.1.1 (2011/04/07)
 ------------------
 
 - removed required in color field [andrea]
