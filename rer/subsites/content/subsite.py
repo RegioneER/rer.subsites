@@ -36,7 +36,7 @@ RERSubsiteSchema = folder.ATFolderSchema.copy() + atapi.Schema((
             validators = (('isNonEmptyFile', V_REQUIRED)),
             ),
     atapi.StringField('subsiteColor',
-                required=True,
+                required=False,
                 widget=atapi.StringWidget(label=_(u'rer_subsites_color', default=u'Color of the subsite'),
                                     description=_(u'rer_subsites_color_help', default=u"Insert an hexadecimal value for the subsite color. Use the # character before the value (for example: #FFFFFF)"),
                                     )
