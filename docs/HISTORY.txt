@@ -1,11 +1,16 @@
 Changelog
 =========
 
+1.1.2 (Unreleased)
+------------------
+
+- egg cleanup [keul]
+- z3c.autoinclude [keul]
+
 1.1.1 (2011/04/07)
 ------------------
 
 - removed required in color field [andrea]
-
 
 1.1.0 (2011/03/29)
 ------------------

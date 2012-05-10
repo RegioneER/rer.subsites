@@ -5,34 +5,15 @@ This module contains the tool of rer.subsites
 import os
 from setuptools import setup, find_packages
 
-
-def read(*rnames):
-    return open(os.path.join(os.path.dirname(__file__), *rnames)).read()
-
 version = '1.1.1'
-
-long_description = (
-    read('README.txt')
-    + '\n' +
-    'Change history\n'
-    '**************\n'
-    + '\n' +
-    open(os.path.join("docs", "HISTORY.txt")).read()
-    + '\n' +
-    'Contributors\n'
-    '************\n'
-    + '\n' +
-    read('CONTRIBUTORS.txt')
-    + '\n' +
-    'Download\n'
-    '********\n')
 
 tests_require = ['zope.testing']
 
 setup(name='rer.subsites',
       version=version,
       description="Subsites for ER portals",
-      long_description=long_description,
+      long_description=open("README.txt").read() + "\n" +
+                       open(os.path.join("docs", "HISTORY.txt")).read(),
       # Get more strings from
       # http://pypi.python.org/pypi?%3Aaction=list_classifiers
       classifiers=[
@@ -57,6 +38,8 @@ setup(name='rer.subsites',
       extras_require=dict(tests=tests_require),
       test_suite='rer.subsites.tests.test_docs.test_suite',
       entry_points="""
-      # -*- entry_points -*-
+      # -*- Entry points: -*-
+      [z3c.autoinclude.plugin]
+      target = plone
       """,
       )
