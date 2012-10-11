@@ -8,6 +8,10 @@
   <five:registerPackage package="." initialize=".initialize" />
   <i18n:registerTranslations directory="locales" />
   
+  <include package="Products.CMFPlone" />
+  <include package="archetypes.schemaextender" />
+  <adapter factory=".extender.RERSubsiteExtender" />
+
   <!-- Include the sub-packages that use their own configure.zcml files. -->
   <include package=".browser" />
   <include package=".content" />
@@ -27,5 +31,15 @@
       description="Configure er subsites properties"
       handler="rer.subsites.exportimport.import_various"
       />
+
+  <genericsetup:upgradeStep
+        title="Upgrade rer.subsites to 1.2"
+        description=""
+        source="*"
+        destination="1000"
+        handler=".exportimport.migrateTo1000"
+        sortkey="1"
+        profile="rer.subsites:default"
+    />
 
 </configure>

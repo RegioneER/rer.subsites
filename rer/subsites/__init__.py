@@ -1,6 +1,8 @@
 """Main product initializer
 """
 
+import logging
+
 from zope.i18nmessageid import MessageFactory
 from rer.subsites import config
 
@@ -12,7 +14,7 @@ from Products.CMFCore import utils
 # like _(u"message") will then be extracted by i18n tools for translation.
 
 subsitesMessageFactory = MessageFactory('rer.subsites')
-
+logger = logging.getLogger('rer.subsites')
 
 def initialize(context):
     """Initializer called when used as a Zope 2 product.

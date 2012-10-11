@@ -1,17 +1,11 @@
-.. contents::
+Documentazione
+==============
 
-.. Note!
-   -----
-   Update the following URLs to point to your:
+Sottositi Regione RER
 
-   - code repository
-   - bug tracker
-   - questions/comments feedback mail
-   (do not set a real mail, to avoid spams)
+Migrazione immagini ai blob
+---------------------------
 
-   Or remove it if not used.
+Lanciare la vista ``@@blob-subsite-migration`` sul sito.
 
-- Code repository: http://svn.somewhere.com/...
-- Questions and comments to somemailing_list
-- Report bugs at http://bug.somewhere.com/..
 

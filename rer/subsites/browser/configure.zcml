@@ -1,11 +1,12 @@
 <configure
     xmlns="http://namespaces.zope.org/zope"
     xmlns:browser="http://namespaces.zope.org/browser"
+	xmlns:zcml="http://namespaces.zope.org/zcml"
     i18n_domain="rer.subsites">
 
   <include package="plone.app.contentmenu" />
   
-  <!-- VIEW TO CHECK AVAILABILITY OF HTE CSS -->
+  <!-- VIEW TO CHECK AVAILABILITY OF THE CSS -->
   <browser:page
         for="*"
         name="show-subsitescss"
@@ -34,5 +35,12 @@
         name="subsite.png"
         file="subsite.png"
         />
+
+  <browser:page
+        zcml:condition="installed Products.contentmigration"
+        for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+        name="blob-subsite-migration"
+        class=".migrate.MigrateBlobs"
+        permission="cmf.ManagePortal" />
 
 </configure>

@@ -14,6 +14,8 @@ from Products.ATReferenceBrowserWidget.ATReferenceBrowserWidget import \
     ReferenceBrowserWidget
 from Products.Archetypes import atapi
 
+from Products.validation.validators.RegexValidator import RegexValidator
+
 from rer.subsites import subsitesMessageFactory as _
 from rer.subsites.config import PROJECTNAME
 from rer.subsites.interfaces import IRERSubsite
@@ -43,6 +45,7 @@ RERSubsiteSchema = folder.ATFolderSchema.copy() + atapi.Schema((
             ),
     atapi.StringField('subsiteColor',
                 required=False,
+                validators=(RegexValidator('isCSSColor', r'^#?\w+;?$', errmsg=_(u'Not a valid color')),),
                 widget=atapi.StringWidget(label=_(u'rer_subsites_color', default=u'Color of the subsite'),
                                     description=_(u'rer_subsites_color_help', default=u"Insert an hexadecimal value for the subsite color. Use the # character before the value (for example: #FFFFFF)"),
                                     )

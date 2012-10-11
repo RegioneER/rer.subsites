@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2011-03-29 08:47+0000\n"
+"POT-Creation-Date: 2012-10-11 13:12+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: Andrea Cecchi <andrea.cecchi@redturtle.net>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,58 +19,58 @@ msgstr ""
 msgid "A subsite for ER portals"
 msgstr "Un sottosito per i portali ER"
 
-#. Default: "Edit"
-#: ./profiles/default/types/RERSubsite.xml
-msgid "Edit"
-msgstr ""
+#: ./browser/migrate.py:20
+msgid "BLOBs Migration"
+msgstr "Migrazione ai blob"
 
-#. Default: "Folder Listing"
-#: ./profiles/default/types/RERSubsite.xml
-msgid "Folder Listing"
-msgstr ""
+#: ./browser/migrate.py:33
+msgid "Cancel"
+msgstr "Annulla"
 
-#. Default: "References"
-#: ./profiles/default/types/RERSubsite.xml
-msgid "References"
-msgstr ""
+#: ./browser/migrate.py:23
+msgid "Migrate"
+msgstr "Migrazione"
+
+#: ./browser/migrate.py:21
+msgid "Migrate Subsite images to Blob"
+msgstr "Migrazione delle immagini dei sottositi ai BLOB"
+
+#: ./content/subsite.py:48
+msgid "Not a valid color"
+msgstr "Non è un colore valido"
 
 #. Default: "Subsite"
 #: ./profiles/default/types/RERSubsite.xml
 msgid "Subsite"
 msgstr "Sottosito"
 
-#. Default: "View"
-#: ./profiles/default/types/RERSubsite.xml
-msgid "View"
-msgstr ""
-
 #. Default: "Color of the subsite"
-#: ./content/subsite.py:40
+#: ./content/subsite.py:49
 msgid "rer_subsites_color"
 msgstr "Colore del sottosito"
 
 #. Default: "Insert an hexadecimal value for the subsite color. Use the # character before the value (for example: #FFFFFF)"
-#: ./content/subsite.py:41
+#: ./content/subsite.py:50
 msgid "rer_subsites_color_help"
 msgstr "Inserisci un valore esadecimale per il colore del sottosito. Usa il carattere # prima del valore (per esempio: #FFFFFF)"
 
 #. Default: "Image"
-#: ./content/subsite.py:32
+#: ./content/subsite.py:38
 msgid "rer_subsites_image"
 msgstr "Immagine"
 
 #. Default: "Insert an image for the viewlet with the subsite name."
-#: ./content/subsite.py:33
+#: ./content/subsite.py:39
 msgid "rer_subsites_image_help"
 msgstr "Inserisci un'immagine per la viewlet con il nome del nome del sottosito."
 
 #. Default: "News archive"
-#: ./content/subsite.py:26
+#: ./content/subsite.py:32
 msgid "rer_subsites_newsarchivefolder"
 msgstr "Archivio news"
 
 #. Default: "An archive for the news. If this field is set, the news in this subsite will show his value in \"News archive\" link"
-#: ./content/subsite.py:27
+#: ./content/subsite.py:33
 msgid "rer_subsites_newsarchivefolder_help"
 msgstr "Un archivio per le news. Se questo campo è impostato, le notizie di questo sottosito mostreranno il suo contenuto nel link \"Archivio news\""
 

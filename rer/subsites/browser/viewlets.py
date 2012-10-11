@@ -30,7 +30,7 @@ class SubsiteColorViewlet(SubsiteViewletBase):
         if not self.subsite:
             return ""
         color=self.subsite.getSubsiteColor()
-        image=self.subsite.getImage()
+        image = self.subsite.getImage()
         return_string = ''
         if color or image:
             styles=[]
@@ -38,7 +38,7 @@ class SubsiteColorViewlet(SubsiteViewletBase):
             if color:
                 styles.append("background-color:%s" %color)
             if image:
-                styles.append("background-image:url(%s)" % image.absolute_url())
+                styles.append("background-image:url(%s/image)" % self.subsite.absolute_url())
             css +=';'.join(styles)
             css +='}'
             styles=[]
