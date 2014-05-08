@@ -4,7 +4,7 @@ Changelog
 1.2.1 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Add tinymce config file [cekk]
 
 
 1.2.0 (2012-10-11)
@@ -25,12 +25,12 @@ Changelog
 1.1.1 (2011/04/07)
 ------------------
 
-- removed required in color field [andrea]
+- removed required in color field [cekk]
 
 1.1.0 (2011/03/29)
 ------------------
 
-- aggiunti campi colore e immagine testata [andrea]
+- aggiunti campi colore e immagine testata [cekk]
 - modificato html viewlet testata [nekorin]
 - aggiunto css per colore specifico [nekorin]
 
