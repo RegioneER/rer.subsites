@@ -22,12 +22,13 @@ from rer.subsites.interfaces import IRERSubsite
 from Products.validation import V_REQUIRED
 
 RERSubsiteSchema = folder.ATFolderSchema.copy() + atapi.Schema((
-    
+
     atapi.ReferenceField("newsArchiveFolder",
              storage=atapi.AnnotationStorage(),
              required=False,
              multiValued=False,
              relationship='newsArchiveFolder',
+             keepReferencesOnCopy=True,
              widget=ReferenceBrowserWidget(
                             label=_('rer_subsites_newsarchivefolder', default=u'News archive'),
                             description=_('rer_subsites_newsarchivefolder_help', default=u'An archive for the news. If this field is set, the news in this subsite will show his value in "News archive" link'),
@@ -61,9 +62,9 @@ class RERSubsite(folder.ATFolder):
     implements(IRERSubsite)
     meta_type = "RERSubsite"
     schema = RERSubsiteSchema
-    
+
     security = ClassSecurityInfo()
-    
+
     def allowedContentTypes(self):
         '''
         Remove RERSubsite to allowed types

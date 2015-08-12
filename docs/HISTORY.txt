@@ -4,7 +4,7 @@ Changelog
 1.2.2 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Fix reference field [cekk]
 
 
 1.2.1 (2014-05-08)
