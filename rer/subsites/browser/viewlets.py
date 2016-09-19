@@ -1,27 +1,34 @@
-from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
+# -*- coding: utf-8 -*-
+from plone import api
 from plone.app.layout.viewlets.common import ViewletBase
-from rer.subsites.interfaces import IRERSubsite
+from rer.subsites.interfaces import IRERSubsitesSettings, IRERSubsite
+
 
 class SubsiteViewletBase(ViewletBase):
     def __init__(self, context, request, view, manager):
         super(SubsiteViewletBase, self).__init__(context, request, view, manager)
-        self.subsite=self.getSubsiteObj()
-    
+        self.subsite = self.getSubsiteObj()
+
     def render(self):
         if self.subsite:
             return self.index()
         else:
             return ""
-    
+
     def getSubsiteObj(self):
         for elem in self.context.aq_inner.aq_chain:
             if IRERSubsite.providedBy(elem):
                 return elem
         return None
-    
+
+
 class SubsiteTitleViewlet(SubsiteViewletBase):
-    index = ViewPageTemplateFile('viewlets/rer_subsite_title.pt')
-    
+    """
+    viewlet with title
+    """
+    # index = ViewPageTemplateFile('viewlets/rer_subsite_title.pt')
+
+
 class SubsiteColorViewlet(SubsiteViewletBase):
     """
     A Viewlet that allows to add some dynamic css in the  header
@@ -29,23 +36,43 @@ class SubsiteColorViewlet(SubsiteViewletBase):
     def render(self):
         if not self.subsite:
             return ""
-        color=self.subsite.getSubsiteColor()
-        image = self.subsite.getImage()
+
         return_string = ''
-        if color or image:
-            styles=[]
-            css="#subsiteTitle {"
-            if color:
-                styles.append("background-color:%s" %color)
-            if image:
-                styles.append("background-image:url(%s/image)" % self.subsite.absolute_url())
-            css +=';'.join(styles)
-            css +='}'
-            styles=[]
-            css+="#contentCarousel {"
-            if color:
-                styles.append("background-color:%s" %color)
-            css +=';'.join(styles)
-            css +='}'
-            return_string = "<style type='text/css'>%s</style>" %css
+        styles = self.get_default_styles()
+        custom_styles = self.get_custom_styles()
+        if custom_styles:
+            styles += custom_styles
+        return_string = "<style type='text/css'>%s</style>" % styles
         return return_string
+
+    def get_default_styles(self):
+        color = self.subsite.getSubsiteColor()
+        image = self.subsite.getImage()
+        subsite_url = self.subsite.absolute_url()
+        if not color and not image:
+            return ""
+        styles = []
+        css = "#subsiteTitle {"
+        if color:
+            styles.append("background-color:%s" % color)
+        if image:
+            styles.append("background-image:url(%s/image)" % subsite_url)
+        css += ';'.join(styles)
+        css += '}'
+        styles = []
+        css += "#contentCarousel {"
+        if color:
+            styles.append("background-color:%s" % color)
+        css += ';'.join(styles)
+        css += '}'
+        return css
+
+    def get_custom_styles(self):
+        """
+        read styles from control panel
+        """
+        color = self.subsite.getSubsiteColor()
+        css = api.portal.get_registry_record(
+            'subsite_styles',
+            interface=IRERSubsitesSettings)
+        return css.replace('\r\n', ' ').replace('$color$', color)

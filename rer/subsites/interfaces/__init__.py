@@ -1,3 +1,5 @@
 from subsite import IRERSubsite, IRERSubsiteLayer
+from settings import IRERSubsitesSettings
 IRERSubsite
 IRERSubsiteLayer
+IRERSubsitesSettings
