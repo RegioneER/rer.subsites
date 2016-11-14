@@ -75,4 +75,6 @@ class SubsiteColorViewlet(SubsiteViewletBase):
         css = api.portal.get_registry_record(
             'subsite_styles',
             interface=IRERSubsitesSettings)
+        if not css:
+            return ""
         return css.replace('\r\n', ' ').replace('$color$', color)
