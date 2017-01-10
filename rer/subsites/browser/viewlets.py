@@ -2,6 +2,7 @@
 from plone import api
 from plone.app.layout.viewlets.common import ViewletBase
 from rer.subsites.interfaces import IRERSubsitesSettings, IRERSubsite
+from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 
 
 class SubsiteViewletBase(ViewletBase):
@@ -26,7 +27,7 @@ class SubsiteTitleViewlet(SubsiteViewletBase):
     """
     viewlet with title
     """
-    # index = ViewPageTemplateFile('viewlets/rer_subsite_title.pt')
+    index = ViewPageTemplateFile('viewlets/rer_subsite_title.pt')
 
 
 class SubsiteColorViewlet(SubsiteViewletBase):
