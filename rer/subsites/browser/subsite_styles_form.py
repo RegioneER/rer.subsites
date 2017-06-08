@@ -55,6 +55,8 @@ class SubsiteStylesForm(SchemaForm):
         self.context.image = data.get('image')
 
     def additional_validation(self, data):
+        if not data.get('subsite_color', ''):
+            return
         m = re.search('^#?\w+;?$', data.get('subsite_color'))
         if not m:
             raise WidgetActionExecutionError('subsite_color',
