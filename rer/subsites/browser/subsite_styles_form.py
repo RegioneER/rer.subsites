@@ -1,5 +1,5 @@
 # -*- coding=utf-8 -*-
-from .. import logger as _
+from .. import subsitesMessageFactory as _
 from plone import api
 from plone.directives.form import Schema
 from plone.directives.form import SchemaForm
@@ -10,6 +10,8 @@ from rer.subsites.interfaces import IRERSubsiteSchema
 from rer.subsites.interfaces import IRERSubsiteEnabled
 from zope.interface import Invalid
 from z3c.form.interfaces import WidgetActionExecutionError
+import re
+from zope.interface import Invalid
 
 
 @implementer(IRERSubsiteSchema)
@@ -53,11 +55,10 @@ class SubsiteStylesForm(SchemaForm):
         self.context.image = data.get('image')
 
     def additional_validation(self, data):
-        return
-        # Some additional validation
-        if data.get('remoteUrl') and data.get('ISmartLinkExtension.internal_link'):
-            raise WidgetActionExecutionError('remoteUrl',
-                Invalid(_('error_internallink_externallink_doubled', default="You must select an internal link or enter an external link. You cannot have both."),))
+        m = re.search('^#?\w+;?$', data.get('subsite_color'))
+        if not m:
+            raise WidgetActionExecutionError('subsite_color',
+                Invalid(_('error_invalid_css_color', default="Not a valid color"),))
 
     @button.buttonAndHandler(u'Salva', name='save')
     def handleSubmit(self, action):

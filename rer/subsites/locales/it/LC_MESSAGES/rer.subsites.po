@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2012-10-11 13:12+0000\n"
+"POT-Creation-Date: 2017-06-08 11:59+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: Andrea Cecchi <andrea.cecchi@redturtle.net>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,63 +14,58 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: rer.subsites\n"
 
-#. Default: "A subsite for ER portals"
-#: ./profiles/default/types/RERSubsite.xml
-msgid "A subsite for ER portals"
-msgstr "Un sottosito per i portali ER"
+#: ./configure.zcml:29
+msgid "RER: Subsites"
+msgstr ""
 
-#: ./browser/migrate.py:20
-msgid "BLOBs Migration"
-msgstr "Migrazione ai blob"
+#: ./configure.zcml:37
+msgid "RER: Subsites uninstall"
+msgstr ""
 
-#: ./browser/migrate.py:33
-msgid "Cancel"
-msgstr "Annulla"
+#: ./interfaces/settings.py:14
+msgid "Subsite styles"
+msgstr ""
 
-#: ./browser/migrate.py:23
-msgid "Migrate"
-msgstr "Migrazione"
+#: ./configure.zcml:29
+msgid "Subsites for ER portals"
+msgstr ""
 
-#: ./browser/migrate.py:21
-msgid "Migrate Subsite images to Blob"
-msgstr "Migrazione delle immagini dei sottositi ai BLOB"
+#: ./browser/controlpanel/controlpanel.py:15
+#: ./profiles/default/controlpanel.xml
+msgid "Subsites settings"
+msgstr ""
 
-#: ./content/subsite.py:48
-msgid "Not a valid color"
-msgstr "Non è un colore valido"
+#. Default: "Not a valid color"
+#: ./browser/subsite_styles_form.py:62
+msgid "error_invalid_css_color"
+msgstr "Codice colore non valido "
 
-#. Default: "Subsite"
-#: ./profiles/default/types/RERSubsite.xml
-msgid "Subsite"
-msgstr "Sottosito"
+#. Default: "Insert a list of css styles that will be applied in the subsite and his children. Where you need to use the subsite color, you should write '$color$' string."
+#: ./interfaces/settings.py:15
+msgid "help_subsite_styles"
+msgstr ""
+
+#. Default: "Set subsites configurations"
+#: ./browser/controlpanel/controlpanel.py:16
+msgid "help_subsites_settings_editform"
+msgstr ""
 
 #. Default: "Color of the subsite"
-#: ./content/subsite.py:49
+#: ./interfaces/settings.py:24
 msgid "rer_subsites_color"
 msgstr "Colore del sottosito"
 
 #. Default: "Insert an hexadecimal value for the subsite color. Use the # character before the value (for example: #FFFFFF)"
-#: ./content/subsite.py:50
+#: ./interfaces/settings.py:25
 msgid "rer_subsites_color_help"
 msgstr "Inserisci un valore esadecimale per il colore del sottosito. Usa il carattere # prima del valore (per esempio: #FFFFFF)"
 
 #. Default: "Image"
-#: ./content/subsite.py:38
+#: ./interfaces/settings.py:33
 msgid "rer_subsites_image"
 msgstr "Immagine"
 
 #. Default: "Insert an image for the viewlet with the subsite name."
-#: ./content/subsite.py:39
+#: ./interfaces/settings.py:34
 msgid "rer_subsites_image_help"
 msgstr "Inserisci un'immagine per la viewlet con il nome del nome del sottosito."
-
-#. Default: "News archive"
-#: ./content/subsite.py:32
-msgid "rer_subsites_newsarchivefolder"
-msgstr "Archivio news"
-
-#. Default: "An archive for the news. If this field is set, the news in this subsite will show his value in \"News archive\" link"
-#: ./content/subsite.py:33
-msgid "rer_subsites_newsarchivefolder_help"
-msgstr "Un archivio per le news. Se questo campo è impostato, le notizie di questo sottosito mostreranno il suo contenuto nel link \"Archivio news\""
-

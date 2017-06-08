@@ -3,7 +3,7 @@
    xmlns:i18n="http://xml.zope.org/namespaces/i18n"
    purge="False">
 
- <action title="Subsite styles"
+ <action title="Stile sottosito"
          action_id="subsite-styles-form"
          category="object"
          condition_expr="python: context.restrictedTraverse('@@check_subsite_action_remove')()"
