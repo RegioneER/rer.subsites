@@ -19,7 +19,7 @@
   <!-- viewlet titolo -->
   <browser:viewlet
       name="rer.subsite_title"
-      manager="plone.app.layout.viewlets.interfaces.IPortalTop"
+      manager="plone.app.layout.viewlets.interfaces.IMainNavigation"
       class=".viewlets.SubsiteTitleViewlet"
       layer="..interfaces.IRERSubsiteLayer"
       permission="zope2.View"
@@ -38,11 +38,58 @@
         file="subsite.png"
         />
 
+
   <browser:page
-        zcml:condition="installed Products.contentmigration"
-        for="Products.CMFPlone.interfaces.IPloneSiteRoot"
-        name="blob-subsite-migration"
-        class=".migrate.MigrateBlobs"
-        permission="cmf.ManagePortal" />
+   for="*"
+   name="mark_subsite"
+   class=".subsite_folder_utils.ToggleMarkSubsite"
+   attribute="add_interface"
+   permission="cmf.ManagePortal"
+   layer="..interfaces.IRERSubsiteLayer"
+   />
+
+ <browser:page
+   for="*"
+   name="unmark_subsite"
+   class=".subsite_folder_utils.ToggleMarkSubsite"
+   attribute="remove_interface"
+   permission="cmf.ManagePortal"
+   layer="..interfaces.IRERSubsiteLayer"
+   />
+
+ <browser:page
+   for="*"
+   name="check_subsite_action_add"
+   attribute="check_subsite_action_add"
+   class=".subsite_folder_utils.CheckSubsiteAction"
+   permission="cmf.ManagePortal"
+   layer="..interfaces.IRERSubsiteLayer"
+   />
+ <browser:page
+   for="*"
+   name="check_subsite_action_remove"
+   attribute="check_subsite_action_remove"
+   class=".subsite_folder_utils.CheckSubsiteAction"
+   permission="cmf.ManagePortal"
+   layer="..interfaces.IRERSubsiteLayer"
+   />
+
+ <adapter factory=".subsite_styles_form.SubsiteStylesFormAdapter" />
+ <browser:page
+   for="..interfaces.IRERSubsiteEnabled"
+   name="subsite_styles_form"
+   class=".subsite_styles_form.SubsiteStylesForm"
+   permission="cmf.ManagePortal"
+   layer="..interfaces.IRERSubsiteLayer"
+   />
+
+ <browser:page
+   for="*"
+   name="subsite_utils_view"
+   allowed_interface="..interfaces.IRERSubsiteUtilsView"
+   class=".subsite_folder_utils.SubsiteUtilsView"
+   permission="zope2.View"
+   layer="..interfaces.IRERSubsiteLayer"
+   />
 
 </configure>

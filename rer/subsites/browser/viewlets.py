@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from plone import api
 from plone.app.layout.viewlets.common import ViewletBase
-from rer.subsites.interfaces import IRERSubsitesSettings, IRERSubsite
+from rer.subsites.interfaces import IRERSubsitesSettings, IRERSubsiteEnabled
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 
 
@@ -18,7 +18,7 @@ class SubsiteViewletBase(ViewletBase):
 
     def getSubsiteObj(self):
         for elem in self.context.aq_inner.aq_chain:
-            if IRERSubsite.providedBy(elem):
+            if IRERSubsiteEnabled.providedBy(elem):
                 return elem
         return None
 
@@ -47,9 +47,9 @@ class SubsiteColorViewlet(SubsiteViewletBase):
         return return_string
 
     def get_default_styles(self):
-        color = self.subsite.getSubsiteColor()
-        image = self.subsite.getImage()
-        subsite_url = self.subsite.absolute_url()
+        color = self.context.subsite_color
+        image = self.context.image
+        subsite_url = self.context.absolute_url()
         if not color and not image:
             return ""
         styles = []
@@ -57,7 +57,7 @@ class SubsiteColorViewlet(SubsiteViewletBase):
         if color:
             styles.append("background-color:%s" % color)
         if image:
-            styles.append("background-image:url(%s/image)" % subsite_url)
+            styles.append("background-image:url(%s/@@images/image)" % subsite_url)
         css += ';'.join(styles)
         css += '}'
         styles = []
@@ -72,7 +72,7 @@ class SubsiteColorViewlet(SubsiteViewletBase):
         """
         read styles from control panel
         """
-        color = self.subsite.getSubsiteColor()
+        color = self.context.subsite_color
         css = api.portal.get_registry_record(
             'subsite_styles',
             interface=IRERSubsitesSettings)

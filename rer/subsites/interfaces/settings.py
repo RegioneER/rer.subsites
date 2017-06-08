@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from zope.interface import Interface
+from plone.namedfile.field import NamedBlobImage
 from rer.subsites import subsitesMessageFactory as _
 from zope import schema
 
@@ -14,4 +15,24 @@ class IRERSubsitesSettings(Interface):
         description=_('help_subsite_styles',
                       default=u"Insert a list of css styles that will be applied in the subsite and his children. Where you need to use the subsite color, you should write '$color$' string."),
         required=False,
+    )
+
+
+class IRERSubsiteSchema(Interface):
+
+    subsite_color = schema.TextLine(
+        title=_(u'rer_subsites_color', default=u'Color of the subsite'),
+        description=_(
+            u'rer_subsites_color_help',
+            default=u"Insert an hexadecimal value for the subsite color. Use the # character before the value (for example: #FFFFFF)"
+        ),
+        required=False,
+    )
+
+    image = NamedBlobImage(
+        title=_(u'rer_subsites_image', default=u'Image'),
+        description=_(u'rer_subsites_image_help',
+            default=u"Insert an image for the viewlet with the subsite name."),
+        required=False,
+
     )
