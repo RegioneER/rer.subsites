@@ -5,7 +5,7 @@ This module contains the tool of rer.subsites
 import os
 from setuptools import setup, find_packages
 
-version = '1.3.2.dev0'
+version = '2.0.0.dev0'
 
 tests_require = ['zope.testing']
 
@@ -31,7 +31,6 @@ setup(name='rer.subsites',
       include_package_data=True,
       zip_safe=False,
       install_requires=['setuptools',
-                        'archetypes.schemaextender',
                         'plone.app.imaging',
                         'plone.api',
                         ],
