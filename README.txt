@@ -1,11 +1,14 @@
-Documentazione
-==============
+Introduction
+============
 
-Sottositi Regione RER
+Subsites for Regione Emilia Romagna (RER)
 
-Migrazione immagini ai blob
----------------------------
 
-Lanciare la vista ``@@blob-subsite-migration`` sul sito.
 
+Dependencies
+============
+
+From version 2.0.0 this product is compatible only for Plone 5.
+
+1.x.x versions still works on Plone 3.3.5 and Plone 4.
 
