@@ -6,7 +6,7 @@ from plone.directives.form import SchemaForm
 from z3c.form import button
 from zope.component import adapter
 from zope.interface import implementer
-from rer.subsites.interfaces import IRERSubsiteSchema
+from rer.subsites.interfaces import IRERSubsiteEnabled
 from rer.subsites.interfaces import IRERSubsiteEnabled
 from zope.interface import Invalid
 from z3c.form.interfaces import WidgetActionExecutionError
@@ -14,7 +14,7 @@ import re
 from zope.interface import Invalid
 
 
-@implementer(IRERSubsiteSchema)
+@implementer(IRERSubsiteEnabled)
 @adapter(IRERSubsiteEnabled)
 class SubsiteStylesFormAdapter(object):
     ''''''
@@ -30,7 +30,7 @@ class SubsiteStylesForm(SchemaForm):
 
     ''' Dinamically built form
     '''
-    schema = IRERSubsiteSchema
+    schema = IRERSubsiteEnabled
     ignoreContext = False
 
     def show_message(self, msg, msg_type):

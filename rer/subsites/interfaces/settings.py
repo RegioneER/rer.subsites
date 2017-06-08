@@ -18,7 +18,7 @@ class IRERSubsitesSettings(Interface):
     )
 
 
-class IRERSubsiteSchema(Interface):
+class IRERSubsiteEnabled(Interface):
 
     subsite_color = schema.TextLine(
         title=_(u'rer_subsites_color', default=u'Color of the subsite'),

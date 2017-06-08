@@ -1,2 +1,2 @@
-from .subsite import IRERSubsite, IRERSubsiteLayer, IRERSubsiteUtilsView, IRERSubsiteEnabled
-from .settings import IRERSubsitesSettings, IRERSubsiteSchema
+from .subsite import IRERSubsiteLayer, IRERSubsiteUtilsView
+from .settings import IRERSubsitesSettings, IRERSubsiteEnabled

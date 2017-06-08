@@ -84,7 +84,6 @@ class SubsiteUtilsView(BaseSubsiteView):
         """
         Retrieve the subsite folder, and get saved css class
         """
-        import pdb; pdb.set_trace()
         subsite = self.get_subsite_folder()
         if not subsite:
             return {}
