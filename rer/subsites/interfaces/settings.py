@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from zope.interface import Interface
 from plone.namedfile.field import NamedBlobImage
+from collective.z3cform.colorpicker import Color
 from rer.subsites import subsitesMessageFactory as _
 from zope import schema
 
@@ -20,7 +21,7 @@ class IRERSubsitesSettings(Interface):
 
 class IRERSubsiteEnabled(Interface):
 
-    subsite_color = schema.TextLine(
+    subsite_color = Color(
         title=_(u'rer_subsites_color', default=u'Color of the subsite'),
         description=_(
             u'rer_subsites_color_help',

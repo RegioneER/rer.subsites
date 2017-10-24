@@ -5,10 +5,12 @@ class IRERSubsiteLayer(Interface):
     """A layer specific to subsite product
     """
 
+
 class IRERSubsiteEnabled(Interface):
     """
     Marker interface for Subsite folders
     """
+
 
 class IRERSubsiteUtilsView(Interface):
     """ Marker interface for SubsiteUtilsView """

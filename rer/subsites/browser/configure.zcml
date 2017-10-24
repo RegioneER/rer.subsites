@@ -28,10 +28,10 @@
   <!-- GESTIONE COLORE -->
     <browser:viewlet
       name="subsite_color.viewlet"
-      manager="plone.app.layout.viewlets.interfaces.IHtmlHeadLinks"
+        manager="plone.app.layout.viewlets.interfaces.IHtmlHead"
       class=".viewlets.SubsiteColorViewlet"
       layer="..interfaces.IRERSubsiteLayer"
-      permission="zope.Public"
+      permission="zope2.View"
         />
   <browser:resource
         name="subsite.png"
