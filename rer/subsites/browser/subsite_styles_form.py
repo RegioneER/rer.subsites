@@ -1,17 +1,14 @@
 # -*- coding=utf-8 -*-
 from .. import subsitesMessageFactory as _
 from plone import api
-from plone.directives.form import Schema
 from plone.directives.form import SchemaForm
+from rer.subsites.interfaces import IRERSubsiteEnabled
 from z3c.form import button
+from z3c.form.interfaces import WidgetActionExecutionError
 from zope.component import adapter
 from zope.interface import implementer
-from rer.subsites.interfaces import IRERSubsiteEnabled
-from rer.subsites.interfaces import IRERSubsiteEnabled
 from zope.interface import Invalid
-from z3c.form.interfaces import WidgetActionExecutionError
 import re
-from zope.interface import Invalid
 
 
 @implementer(IRERSubsiteEnabled)
@@ -59,8 +56,14 @@ class SubsiteStylesForm(SchemaForm):
             return
         m = re.search('^#?\w+;?$', data.get('subsite_color'))
         if not m:
-            raise WidgetActionExecutionError('subsite_color',
-                Invalid(_('error_invalid_css_color', default="Not a valid color"),))
+            raise WidgetActionExecutionError(
+                'subsite_color',
+                Invalid(
+                    _(
+                        'error_invalid_css_color',
+                        default="Not a valid color"),
+                    )
+                )
 
     @button.buttonAndHandler(u'Salva', name='save')
     def handleSubmit(self, action):

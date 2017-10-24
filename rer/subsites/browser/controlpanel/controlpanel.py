@@ -1,9 +1,7 @@
 # -*- coding: utf-8 -*-
 from plone.app.registry.browser import controlpanel
-from Products.statusmessages.interfaces import IStatusMessage
 from rer.subsites import subsitesMessageFactory as _
 from rer.subsites.interfaces import IRERSubsitesSettings
-from plone import api
 
 
 class RERSubsitesSettingsEditForm(controlpanel.RegistryEditForm):

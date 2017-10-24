@@ -1,5 +1,7 @@
 from Products.Five import BrowserView
 from rer.subsites.interfaces import IRERSubsiteEnabled
+
+
 class View(BrowserView):
     """If the object is in a subsite, the css is loaded
     """

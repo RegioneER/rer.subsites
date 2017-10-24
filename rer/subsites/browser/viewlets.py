@@ -7,7 +7,12 @@ from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 
 class SubsiteViewletBase(ViewletBase):
     def __init__(self, context, request, view, manager):
-        super(SubsiteViewletBase, self).__init__(context, request, view, manager)
+        super(SubsiteViewletBase, self).__init__(
+            context,
+            request,
+            view,
+            manager
+        )
         self.subsite = self.getSubsiteObj()
 
     def render(self):
@@ -57,7 +62,8 @@ class SubsiteColorViewlet(SubsiteViewletBase):
         if color:
             styles.append("background-color:%s" % color)
         if image:
-            styles.append("background-image:url(%s/@@images/image)" % subsite_url)
+            styles.append(
+                "background-image:url(%s/@@images/image)" % subsite_url)
         css += ';'.join(styles)
         css += '}'
         styles = []

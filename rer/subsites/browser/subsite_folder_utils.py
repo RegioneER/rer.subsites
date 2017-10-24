@@ -37,17 +37,19 @@ class ToggleMarkSubsite(BaseSubsiteView):
         obj = self.get_canonical()
         messages = IStatusMessage(self.request)
         if not IFolder.providedBy(obj):
-            messages.addStatusMessage(u"Impossibile marcare il contenuto come subsite.",
-                                      type='error')
+            messages.addStatusMessage(
+                u"Impossibile marcare il contenuto come subsite.",
+                type='error'
+            )
             return self.request.response.redirect(obj.absolute_url())
         if not IRERSubsiteEnabled.providedBy(obj):
             alsoProvides(obj, IRERSubsiteEnabled)
             obj.reindexObject(idxs=['object_provides'])
-            messages.addStatusMessage("Cartella marcata come subsite.",
-                                      type='info')
+            messages.addStatusMessage(
+                "Cartella marcata come subsite.", type='info')
         else:
-            messages.addStatusMessage(u"Cartella già marcata come subsite.",
-                                      type='warning')
+            messages.addStatusMessage(
+                u"Cartella già marcata come subsite.", type='warning')
         self.request.response.redirect(obj.absolute_url())
 
     def remove_interface(self):
