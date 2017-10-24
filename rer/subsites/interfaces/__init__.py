@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from .subsite import IRERSubsiteLayer
 from .subsite import IRERSubsiteUtilsView
 from .settings import IRERSubsitesSettings
