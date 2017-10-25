@@ -14,6 +14,7 @@
    />
 
   <include package="Products.CMFPlone" />
+  <include package="collective.z3cform.colorpicker" />
 
   <!-- Include the sub-packages that use their own configure.zcml files. -->
   <include package=".browser" />

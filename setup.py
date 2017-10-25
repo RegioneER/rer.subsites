@@ -7,8 +7,6 @@ from setuptools import setup, find_packages
 
 version = '2.0.0.dev0'
 
-tests_require = ['zope.testing']
-
 setup(name='rer.subsites',
       version=version,
       description="Subsites for ER portals",
@@ -18,6 +16,8 @@ setup(name='rer.subsites',
       # http://pypi.python.org/pypi?%3Aaction=list_classifiers
       classifiers=[
         'Framework :: Plone',
+        'Framework :: Plone :: 5.0',
+        'Framework :: Plone :: 5.1',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: GNU General Public License (GPL)',
         ],
@@ -31,13 +31,19 @@ setup(name='rer.subsites',
       include_package_data=True,
       zip_safe=False,
       install_requires=['setuptools',
-                        'plone.app.imaging',
+                        'plone.directives.form',
                         'plone.api',
                         'collective.z3cform.colorpicker',
                         ],
-      tests_require=tests_require,
-      extras_require=dict(tests=tests_require),
-      test_suite='rer.subsites.tests.test_docs.test_suite',
+      extras_require={
+          'test': [
+              'plone.app.testing',
+              'plone.testing',
+              'plone.app.contenttypes',
+              'plone.app.robotframework[debug]',
+              'unittest2',
+              ]
+      },
       entry_points="""
       # -*- Entry points: -*-
       [z3c.autoinclude.plugin]

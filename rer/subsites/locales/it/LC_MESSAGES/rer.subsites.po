@@ -16,24 +16,24 @@ msgstr ""
 
 #: ./configure.zcml:29
 msgid "RER: Subsites"
-msgstr ""
+msgstr "RER: Subsites"
 
 #: ./configure.zcml:37
 msgid "RER: Subsites uninstall"
-msgstr ""
+msgstr "RER: Subsites uninstall"
 
 #: ./interfaces/settings.py:14
 msgid "Subsite styles"
-msgstr ""
+msgstr "Stili sottositi"
 
 #: ./configure.zcml:29
 msgid "Subsites for ER portals"
-msgstr ""
+msgstr "Sottositi"
 
 #: ./browser/controlpanel/controlpanel.py:15
 #: ./profiles/default/controlpanel.xml
 msgid "Subsites settings"
-msgstr ""
+msgstr "Impostazioni sottositi"
 
 #. Default: "Not a valid color"
 #: ./browser/subsite_styles_form.py:62
@@ -43,12 +43,12 @@ msgstr "Codice colore non valido "
 #. Default: "Insert a list of css styles that will be applied in the subsite and his children. Where you need to use the subsite color, you should write '$color$' string."
 #: ./interfaces/settings.py:15
 msgid "help_subsite_styles"
-msgstr ""
+msgstr "Inserisci una lista di stili css che verranno applicati nel sottosito e nei suoi figli. Se devi utilizzare il colore del sottosito, utilizza la variabile '$color$'."
 
 #. Default: "Set subsites configurations"
 #: ./browser/controlpanel/controlpanel.py:16
 msgid "help_subsites_settings_editform"
-msgstr ""
+msgstr "Configurazioni sottositi"
 
 #. Default: "Color of the subsite"
 #: ./interfaces/settings.py:24
