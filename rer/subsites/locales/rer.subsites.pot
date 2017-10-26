@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2017-06-08 11:59+0000\n"
+"POT-Creation-Date: 2017-10-26 14:54+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,25 +17,30 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: rer.subsites\n"
 
-#: ./configure.zcml:29
-msgid "RER: Subsites"
+#: ./profiles/default/actions.xml
+msgid "Set as subsite"
 msgstr ""
 
-#: ./configure.zcml:37
-msgid "RER: Subsites uninstall"
+#: ./profiles/default/actions.xml
+msgid "Set this folder as subsite"
 msgstr ""
 
-#: ./interfaces/settings.py:14
+#: ./interfaces/settings.py:15
+#: ./profiles/default/actions.xml
 msgid "Subsite styles"
 msgstr ""
 
-#: ./configure.zcml:29
-msgid "Subsites for ER portals"
-msgstr ""
-
-#: ./browser/controlpanel/controlpanel.py:15
+#: ./browser/controlpanel/controlpanel.py:13
 #: ./profiles/default/controlpanel.xml
 msgid "Subsites settings"
+msgstr ""
+
+#: ./profiles/default/actions.xml
+msgid "Unset as subsite"
+msgstr ""
+
+#: ./profiles/default/actions.xml
+msgid "Unset this folder as subsite"
 msgstr ""
 
 #. Default: "Not a valid color"
@@ -44,31 +49,32 @@ msgid "error_invalid_css_color"
 msgstr ""
 
 #. Default: "Insert a list of css styles that will be applied in the subsite and his children. Where you need to use the subsite color, you should write '$color$' string."
-#: ./interfaces/settings.py:15
+#: ./interfaces/settings.py:16
 msgid "help_subsite_styles"
 msgstr ""
 
 #. Default: "Set subsites configurations"
-#: ./browser/controlpanel/controlpanel.py:16
+#: ./browser/controlpanel/controlpanel.py:14
 msgid "help_subsites_settings_editform"
 msgstr ""
 
 #. Default: "Color of the subsite"
-#: ./interfaces/settings.py:24
+#: ./interfaces/settings.py:28
 msgid "rer_subsites_color"
 msgstr ""
 
 #. Default: "Insert an hexadecimal value for the subsite color. Use the # character before the value (for example: #FFFFFF)"
-#: ./interfaces/settings.py:25
+#: ./interfaces/settings.py:29
 msgid "rer_subsites_color_help"
 msgstr ""
 
 #. Default: "Image"
-#: ./interfaces/settings.py:33
+#: ./interfaces/settings.py:39
 msgid "rer_subsites_image"
 msgstr ""
 
 #. Default: "Insert an image for the viewlet with the subsite name."
-#: ./interfaces/settings.py:34
+#: ./interfaces/settings.py:40
 msgid "rer_subsites_image_help"
 msgstr ""
+

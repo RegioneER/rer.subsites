@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2017-06-08 11:59+0000\n"
+"POT-Creation-Date: 2017-10-26 14:54+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: Andrea Cecchi <andrea.cecchi@redturtle.net>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,26 +14,31 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: rer.subsites\n"
 
-#: ./configure.zcml:29
-msgid "RER: Subsites"
-msgstr "RER: Subsites"
+#: ./profiles/default/actions.xml
+msgid "Set as subsite"
+msgstr "Imposta come sottosito"
 
-#: ./configure.zcml:37
-msgid "RER: Subsites uninstall"
-msgstr "RER: Subsites uninstall"
+#: ./profiles/default/actions.xml
+msgid "Set this folder as subsite"
+msgstr "Abilita questa cartella come sottosito"
 
-#: ./interfaces/settings.py:14
+#: ./interfaces/settings.py:15
+#: ./profiles/default/actions.xml
 msgid "Subsite styles"
 msgstr "Stili sottositi"
 
-#: ./configure.zcml:29
-msgid "Subsites for ER portals"
-msgstr "Sottositi"
-
-#: ./browser/controlpanel/controlpanel.py:15
+#: ./browser/controlpanel/controlpanel.py:13
 #: ./profiles/default/controlpanel.xml
 msgid "Subsites settings"
 msgstr "Impostazioni sottositi"
+
+#: ./profiles/default/actions.xml
+msgid "Unset as subsite"
+msgstr "Disabilita come sottosito"
+
+#: ./profiles/default/actions.xml
+msgid "Unset this folder as subsite"
+msgstr "Disabilita questa cartella come sottosito"
 
 #. Default: "Not a valid color"
 #: ./browser/subsite_styles_form.py:62
@@ -41,31 +46,32 @@ msgid "error_invalid_css_color"
 msgstr "Codice colore non valido "
 
 #. Default: "Insert a list of css styles that will be applied in the subsite and his children. Where you need to use the subsite color, you should write '$color$' string."
-#: ./interfaces/settings.py:15
+#: ./interfaces/settings.py:16
 msgid "help_subsite_styles"
 msgstr "Inserisci una lista di stili css che verranno applicati nel sottosito e nei suoi figli. Se devi utilizzare il colore del sottosito, utilizza la variabile '$color$'."
 
 #. Default: "Set subsites configurations"
-#: ./browser/controlpanel/controlpanel.py:16
+#: ./browser/controlpanel/controlpanel.py:14
 msgid "help_subsites_settings_editform"
 msgstr "Configurazioni sottositi"
 
 #. Default: "Color of the subsite"
-#: ./interfaces/settings.py:24
+#: ./interfaces/settings.py:28
 msgid "rer_subsites_color"
 msgstr "Colore del sottosito"
 
 #. Default: "Insert an hexadecimal value for the subsite color. Use the # character before the value (for example: #FFFFFF)"
-#: ./interfaces/settings.py:25
+#: ./interfaces/settings.py:29
 msgid "rer_subsites_color_help"
 msgstr "Inserisci un valore esadecimale per il colore del sottosito. Usa il carattere # prima del valore (per esempio: #FFFFFF)"
 
 #. Default: "Image"
-#: ./interfaces/settings.py:33
+#: ./interfaces/settings.py:39
 msgid "rer_subsites_image"
 msgstr "Immagine"
 
 #. Default: "Insert an image for the viewlet with the subsite name."
-#: ./interfaces/settings.py:34
+#: ./interfaces/settings.py:40
 msgid "rer_subsites_image_help"
 msgstr "Inserisci un'immagine per la viewlet con il nome del nome del sottosito."
+
