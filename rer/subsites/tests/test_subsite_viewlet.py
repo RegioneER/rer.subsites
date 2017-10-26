@@ -33,8 +33,10 @@ class TestSubsiteViewlet(unittest.TestCase):
         alsoProvides(self.subsite, IRERSubsiteEnabled)
         self.subsite.subsite_color = self.subsite_color
 
-        self.unmark_view = self.subsite.restrictedTraverse('unmark_subsite', None)
-        self.mark_view = self.subsite.restrictedTraverse('mark_subsite', None)
+        self.unmark_view = self.subsite.restrictedTraverse(
+            'unmark_subsite', None)
+        self.mark_view = self.subsite.restrictedTraverse(
+            'mark_subsite', None)
 
     def test_show_title_viewlet_in_subsite(self):
         """
