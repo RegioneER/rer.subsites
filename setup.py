@@ -10,7 +10,7 @@ version = '2.0.0.dev0'
 setup(name='rer.subsites',
       version=version,
       description="Subsites for ER portals",
-      long_description=open("README.txt").read() + "\n" +
+      long_description=open("README.rst").read() + "\n" +
                        open(os.path.join("docs", "HISTORY.txt")).read(),
       # Get more strings from
       # http://pypi.python.org/pypi?%3Aaction=list_classifiers
