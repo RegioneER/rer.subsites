@@ -90,13 +90,11 @@ class SubsiteUtilsView(BaseSubsiteView):
         if not subsite:
             return {}
         css_class = getattr(subsite, "subsite_css_class", subsite.getId())
+        subsite_class = getattr(subsite, "subsite_class", '')
         return {
             'title': subsite.Title(),
+            'subsite_class': subsite_class,
             'css_class': css_class,
-            'pin': '{}/++resource++opr.theme/pins/pin-{}.png'.format(
-                api.portal.get().absolute_url(),
-                css_class
-            )
         }
 
     def is_subsite_root(self, obj):
