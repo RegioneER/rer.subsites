@@ -98,3 +98,7 @@ class SubsiteUtilsView(BaseSubsiteView):
                 css_class
             )
         }
+
+    def is_subsite_root(self, obj):
+        """ Return True if a subsite is the root """
+        return IRERSubsiteEnabled.providedBy(obj)

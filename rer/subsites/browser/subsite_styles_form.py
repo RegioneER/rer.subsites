@@ -21,6 +21,7 @@ class SubsiteStylesFormAdapter(object):
         self.context = context
         self.subsite_color = getattr(context, 'subsite_color', '')
         self.image = getattr(context, 'image', '')
+        self.subsite_class = getattr(context, 'subsite_class', '')
 
 
 class SubsiteStylesForm(SchemaForm):
@@ -50,6 +51,7 @@ class SubsiteStylesForm(SchemaForm):
         '''
         self.context.subsite_color = data.get('subsite_color')
         self.context.image = data.get('image')
+        self.context.subsite_class = data.get('subsite_class')
 
     def additional_validation(self, data):
         if not data.get('subsite_color', ''):
