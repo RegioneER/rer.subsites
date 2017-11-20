@@ -52,11 +52,11 @@ class SubsiteColorViewlet(SubsiteViewletBase):
         return return_string
 
     def get_default_styles(self):
-        color = getattr(self.context, 'subsite_color', '')
-        image = getattr(self.context, 'image', None)
+        color = getattr(self.subsite, 'subsite_color', '')
+        image = getattr(self.subsite, 'image', None)
         if not color and not image:
             return ""
-        subsite_url = self.context.absolute_url()
+        subsite_url = self.subsite.absolute_url()
         styles = []
         css = "#subsiteTitle {"
         if color:
@@ -78,7 +78,7 @@ class SubsiteColorViewlet(SubsiteViewletBase):
         """
         read styles from control panel
         """
-        color = getattr(self.context, 'subsite_color', '')
+        color = getattr(self.subsite, 'subsite_color', '')
         css = api.portal.get_registry_record(
             'subsite_styles',
             interface=IRERSubsitesSettings)
