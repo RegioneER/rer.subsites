@@ -1,8 +1,9 @@
 # -*- coding: utf-8 -*-
 from plone import api
 from plone.app.layout.viewlets.common import ViewletBase
-from rer.subsites.interfaces import IRERSubsitesSettings, IRERSubsiteEnabled
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
+from rer.subsites.interfaces import IRERSubsiteEnabled
+from rer.subsites.interfaces import IRERSubsitesSettings
 
 
 class SubsiteViewletBase(ViewletBase):
@@ -19,7 +20,7 @@ class SubsiteViewletBase(ViewletBase):
         if self.subsite:
             return self.index()
         else:
-            return ""
+            return ''
 
     def getSubsiteObj(self):
         for elem in self.context.aq_inner.aq_chain:
@@ -41,35 +42,35 @@ class SubsiteColorViewlet(SubsiteViewletBase):
     """
     def render(self):
         if not self.subsite:
-            return ""
+            return ''
 
         return_string = ''
         styles = self.get_default_styles()
         custom_styles = self.get_custom_styles()
         if custom_styles:
             styles += custom_styles
-        return_string = "<style type='text/css'>%s</style>" % styles
+        return_string = '<style type="text/css">{0}</style>'.format(styles)
         return return_string
 
     def get_default_styles(self):
         color = getattr(self.subsite, 'subsite_color', '')
         image = getattr(self.subsite, 'image', None)
         if not color and not image:
-            return ""
+            return ''
         subsite_url = self.subsite.absolute_url()
         styles = []
-        css = "#subsiteTitle {"
+        css = '#subsiteTitle {'
         if color:
-            styles.append("background-color:%s" % color)
+            styles.append('background-color:{0}'.format(color))
         if image:
             styles.append(
-                "background-image:url(%s/@@images/image)" % subsite_url)
+                'background-image:url({0}/@@images/image)'.format(subsite_url))
         css += ';'.join(styles)
         css += '}'
         styles = []
-        css += "#contentCarousel {"
+        css += '#contentCarousel {'
         if color:
-            styles.append("background-color:%s" % color)
+            styles.append('background-color:{0}'.format(color))
         css += ';'.join(styles)
         css += '}'
         return css
@@ -83,5 +84,5 @@ class SubsiteColorViewlet(SubsiteViewletBase):
             'subsite_styles',
             interface=IRERSubsitesSettings)
         if not css:
-            return ""
+            return ''
         return css.replace('\r\n', ' ').replace('$color$', color)

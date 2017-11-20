@@ -4,6 +4,7 @@ from plone import api
 from plone.browserlayer import utils
 from rer.subsites.interfaces import IRERSubsiteLayer  # noqa
 from rer.subsites.testing import RER_SUBSITES_INTEGRATION_TESTING  # noqa
+
 import unittest2 as unittest
 
 

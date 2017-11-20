@@ -3,10 +3,11 @@
 from plone import api
 from plone.app.testing import setRoles
 from plone.app.testing import TEST_USER_ID
-from rer.subsites.testing import RER_SUBSITES_INTEGRATION_TESTING  # noqa
-import unittest2 as unittest
 from rer.subsites.interfaces import IRERSubsiteEnabled
+from rer.subsites.testing import RER_SUBSITES_INTEGRATION_TESTING  # noqa
 from zope.interface import alsoProvides
+
+import unittest2 as unittest
 
 
 class TestSubsiteViewlet(unittest.TestCase):
@@ -48,7 +49,7 @@ class TestSubsiteViewlet(unittest.TestCase):
         """
         """
         view = self.document.restrictedTraverse('view')()
-        subsite_title = '<h2>{}</h2>'.format(self.subsite.Title())
+        subsite_title = '<h2>{0}</h2>'.format(self.subsite.Title())
         self.assertTrue('id="subsiteTitle"' in view)
         self.assertTrue(subsite_title in view)
 
@@ -78,7 +79,7 @@ class TestSubsiteViewlet(unittest.TestCase):
         """
         self.unmark_view()
         view = self.document.restrictedTraverse('view')()
-        subsite_title = '<h2>{}</h2>'.format(self.subsite.Title())
+        subsite_title = '<h2>{0}</h2>'.format(self.subsite.Title())
         self.assertFalse(self.subsite_color in view)
         self.assertFalse('id="subsiteTitle"' in view)
         self.assertFalse(subsite_title in view)

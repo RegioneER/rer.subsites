@@ -3,10 +3,11 @@
 from plone import api
 from plone.app.testing import setRoles
 from plone.app.testing import TEST_USER_ID
-from rer.subsites.testing import RER_SUBSITES_INTEGRATION_TESTING  # noqa
-import unittest2 as unittest
 from rer.subsites.interfaces import IRERSubsiteEnabled
+from rer.subsites.testing import RER_SUBSITES_INTEGRATION_TESTING  # noqa
 from zope.interface import alsoProvides
+
+import unittest2 as unittest
 
 
 class TestStylesForm(unittest.TestCase):

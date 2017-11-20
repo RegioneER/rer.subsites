@@ -8,16 +8,18 @@ from z3c.form.interfaces import WidgetActionExecutionError
 from zope.component import adapter
 from zope.interface import implementer
 from zope.interface import Invalid
+
 import re
 
 
 @implementer(IRERSubsiteEnabled)
 @adapter(IRERSubsiteEnabled)
 class SubsiteStylesFormAdapter(object):
-    ''''''
+    """
+    """
     def __init__(self, context):
-        ''' To basic stuff
-        '''
+        """ To basic stuff
+        """
         self.context = context
         self.subsite_color = getattr(context, 'subsite_color', '')
         self.image = getattr(context, 'image', '')
@@ -25,18 +27,18 @@ class SubsiteStylesFormAdapter(object):
 
 class SubsiteStylesForm(SchemaForm):
 
-    ''' Dinamically built form
-    '''
+    """ Dinamically built form
+    """
     schema = IRERSubsiteEnabled
     ignoreContext = False
 
     def show_message(self, msg, msg_type):
-        ''' Facade for the show message api function
-        '''
+        """ Facade for the show message api function
+        """
         show_message = api.portal.show_message
         return show_message(msg, request=self.request, type=msg_type)
 
-    def redirect(self, target=None, msg="", msg_type="error"):
+    def redirect(self, target=None, msg='', msg_type='error'):
         """ Redirects the user to the target, optionally with a portal message
         """
         if target is None:
@@ -46,8 +48,8 @@ class SubsiteStylesForm(SchemaForm):
         return self.request.response.redirect(target)
 
     def store_data(self, data):
-        ''' Store the data before returning
-        '''
+        """ Store the data before returning
+        """
         self.context.subsite_color = data.get('subsite_color')
         self.context.image = data.get('image')
 
@@ -61,7 +63,7 @@ class SubsiteStylesForm(SchemaForm):
                 Invalid(
                     _(
                         'error_invalid_css_color',
-                        default="Not a valid color"),
+                        default='Not a valid color'),
                     )
                 )
 
