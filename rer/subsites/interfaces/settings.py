@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from zope.interface import Interface
 from plone.namedfile.field import NamedBlobImage
-#from collective.z3cform.colorpicker import Color
+from collective.z3cform.colorpicker import Color
 from rer.subsites import subsitesMessageFactory as _
 from zope import schema
 
@@ -29,16 +29,16 @@ class IRERSubsitesSettings(Interface):
 
 class IRERSubsiteEnabled(Interface):
 
-    # subsite_color = Color(
-    #     title=_(u'rer_subsites_color', default=u'Color of the subsite'),
-    #     description=_(
-    #         u'rer_subsites_color_help',
-    #         default=u"Insert an hexadecimal value for the subsite color."
-    #                 u" Use the # character before the value"
-    #                 u" (for example: #FFFFFF)"
-    #     ),
-    #     required=False,
-    # )
+    subsite_color = Color(
+        title=_(u'rer_subsites_color', default=u'Color of the subsite'),
+        description=_(
+            u'rer_subsites_color_help',
+            default=u"Insert an hexadecimal value for the subsite color."
+                    u" Use the # character before the value"
+                    u" (for example: #FFFFFF)"
+        ),
+        required=False,
+    )
 
     subsite_class = schema.TextLine(
         title=_(u'rer_subsites_class', default=u'Class'),
