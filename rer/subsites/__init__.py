@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 """Init and utils."""
 
-from zope.i18nmessageid import MessageFactory
 from logging import getLogger
+from zope.i18nmessageid import MessageFactory
 
 
 subsitesMessageFactory = MessageFactory('rer.subsites')

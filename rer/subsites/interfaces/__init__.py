@@ -1,8 +1,9 @@
 # -*- coding: utf-8 -*-
+from .settings import IRERSubsiteEnabled
+from .settings import IRERSubsitesSettings
 from .subsite import IRERSubsiteLayer
 from .subsite import IRERSubsiteUtilsView
-from .settings import IRERSubsitesSettings
-from .settings import IRERSubsiteEnabled
+
 
 IRERSubsiteLayer
 IRERSubsiteUtilsView

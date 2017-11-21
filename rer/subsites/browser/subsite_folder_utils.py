@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-from rer.subsites.interfaces import IRERSubsiteEnabled
-from rer.subsites.interfaces import IRERSubsiteUtilsView
+from plone import api
 from plone.app.contenttypes.interfaces import IFolder
 from Products.Five.browser import BrowserView
-from Products.statusmessages.interfaces import IStatusMessage
-from plone import api
-from zope.interface import alsoProvides, noLongerProvides
-from zope.interface import implements
+from rer.subsites.interfaces import IRERSubsiteEnabled
+from rer.subsites.interfaces import IRERSubsiteUtilsView
+from zope.interface import alsoProvides
+from zope.interface import implementer
+from zope.interface import noLongerProvides
 
 
 class BaseSubsiteView(BrowserView):
@@ -35,41 +35,47 @@ class ToggleMarkSubsite(BaseSubsiteView):
 
     def add_interface(self):
         obj = self.get_canonical()
-        messages = IStatusMessage(self.request)
         if not IFolder.providedBy(obj):
-            messages.addStatusMessage(
-                u"Impossibile marcare il contenuto come subsite.",
-                type='error'
+            api.portal.show_message(
+                message=u'Impossibile marcare il contenuto come subsite.',
+                type='error',
+                request=self.request
             )
             return self.request.response.redirect(obj.absolute_url())
         if not IRERSubsiteEnabled.providedBy(obj):
             alsoProvides(obj, IRERSubsiteEnabled)
             obj.reindexObject(idxs=['object_provides'])
-            messages.addStatusMessage(
-                "Cartella marcata come subsite.", type='info')
+            api.portal.show_message(
+                message='Cartella marcata come subsite.',
+                type='info',
+                request=self.request)
         else:
-            messages.addStatusMessage(
-                u"Cartella già marcata come subsite.", type='warning')
+            api.portal.show_message(
+                message=u'Cartella già marcata come subsite.',
+                type='warning',
+                request=self.request)
         self.request.response.redirect(obj.absolute_url())
 
     def remove_interface(self):
         obj = self.get_canonical()
-        messages = IStatusMessage(self.request)
         if IRERSubsiteEnabled.providedBy(obj):
             noLongerProvides(obj, IRERSubsiteEnabled)
             obj.reindexObject(idxs=['object_provides'])
-            messages.addStatusMessage(u"Cartella non più subsite.",
-                                      type='info')
+            api.portal.show_message(
+                message=u'Cartella non più subsite.',
+                type='info',
+                request=self.request)
         else:
-            messages.addStatusMessage(u"La cartella non era già un subsite.",
-                                      type='warning')
+            api.portal.show_message(
+                message=u'La cartella non era già un subsite.',
+                request=self.request,
+                type='warning')
 
         self.request.response.redirect(obj.absolute_url())
 
 
+@implementer(IRERSubsiteUtilsView)
 class SubsiteUtilsView(BaseSubsiteView):
-
-    implements(IRERSubsiteUtilsView)
 
     def get_subsite_folder(self):
         """
@@ -89,11 +95,11 @@ class SubsiteUtilsView(BaseSubsiteView):
         subsite = self.get_subsite_folder()
         if not subsite:
             return {}
-        css_class = getattr(subsite, "subsite_css_class", subsite.getId())
+        css_class = getattr(subsite, 'subsite_css_class', subsite.getId())
         return {
             'title': subsite.Title(),
             'css_class': css_class,
-            'pin': '{}/++resource++opr.theme/pins/pin-{}.png'.format(
+            'pin': '{0}/++resource++opr.theme/pins/pin-{1}.png'.format(
                 api.portal.get().absolute_url(),
                 css_class
             )

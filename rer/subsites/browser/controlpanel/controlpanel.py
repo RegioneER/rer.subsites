@@ -9,10 +9,10 @@ class RERSubsitesSettingsEditForm(controlpanel.RegistryEditForm):
     Subsites settings
     """
     schema = IRERSubsitesSettings
-    id = "RERSubsitesSettingsEditForm"
-    label = _(u"Subsites settings")
-    description = _(u"help_subsites_settings_editform",
-                    default=u"Set subsites configurations")
+    id = 'RERSubsitesSettingsEditForm'
+    label = _(u'Subsites settings')
+    description = _(u'help_subsites_settings_editform',
+                    default=u'Set subsites configurations')
 
 
 class RERSubsitesSettingsControlPanel(controlpanel.ControlPanelFormWrapper):
