@@ -31,10 +31,10 @@ class SubsiteStylesForm(SchemaForm):
     ''' Dinamically built form
     '''
     schema = IRERSubsiteEnabled
-    #ignoreContext = False
+    ignoreContext = False
 
     fields = field.Fields(IRERSubsiteEnabled)
-    ignoreContext = True
+    #ignoreContext = True
 
     def show_message(self, msg, msg_type):
         ''' Facade for the show message api function
