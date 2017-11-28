@@ -4,6 +4,7 @@ from plone.app.layout.viewlets.common import ViewletBase
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from rer.subsites.interfaces import IRERSubsiteEnabled
 from rer.subsites.interfaces import IRERSubsitesSettings
+from zope.component import getMultiAdapter
 
 
 class SubsiteViewletBase(ViewletBase):
@@ -34,6 +35,19 @@ class SubsiteTitleViewlet(SubsiteViewletBase):
     viewlet with title
     """
     index = ViewPageTemplateFile('viewlets/rer_subsite_title.pt')
+
+    def get_css_class(self):
+        context = self.context.aq_inner
+        context_state = getMultiAdapter(
+            (context, self.request),
+            name=u'plone_context_state'
+        )
+        real_obj = context_state.canonical_object()
+
+        if real_obj == self.subsite:
+            return ''
+
+        return 'subsite-child'
 
 
 class SubsiteColorViewlet(SubsiteViewletBase):
