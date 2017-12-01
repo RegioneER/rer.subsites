@@ -27,6 +27,7 @@ class IRERSubsitesSettings(Interface):
         default=False
     )
 
+
 class IRERSubsiteEnabled(Interface):
 
     subsite_color = Color(
@@ -54,5 +55,4 @@ class IRERSubsiteEnabled(Interface):
             u'rer_subsites_image_help',
             default=u"Insert an image for the viewlet with the subsite name."),
         required=False,
-
     )
