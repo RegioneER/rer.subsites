@@ -4,7 +4,6 @@ from rer.subsites.interfaces import IRERSubsiteUtilsView
 from plone.app.contenttypes.interfaces import IFolder
 from Products.Five.browser import BrowserView
 from Products.statusmessages.interfaces import IStatusMessage
-from plone import api
 from zope.interface import alsoProvides, noLongerProvides
 from zope.interface import implements
 

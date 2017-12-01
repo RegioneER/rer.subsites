@@ -4,13 +4,13 @@ from plone import api
 from plone.directives.form import SchemaForm
 from rer.subsites.interfaces import IRERSubsiteEnabled
 from z3c.form import button
-from z3c.form import form, field
+from z3c.form import field  # , form
 from z3c.form.interfaces import WidgetActionExecutionError
 from zope.component import adapter
 from zope.interface import implementer
 from zope.interface import Invalid
 import re
-from collective.z3cform.colorpicker.colorpicker import ColorpickerFieldWidget
+# from collective.z3cform.colorpicker.colorpicker import ColorpickerFieldWidget
 
 
 @implementer(IRERSubsiteEnabled)
@@ -34,7 +34,7 @@ class SubsiteStylesForm(SchemaForm):
     ignoreContext = False
 
     fields = field.Fields(IRERSubsiteEnabled)
-    #ignoreContext = True
+    # ignoreContext = True
 
     def show_message(self, msg, msg_type):
         ''' Facade for the show message api function

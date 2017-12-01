@@ -25,11 +25,22 @@ class LayoutPolicy(BaseView):
         - default-view: if view is the default view
         """
         body_classes = super(LayoutPolicy, self).bodyClass(template, view)
-        view = api.content.get_view(name='subsite_utils_view', context=self.context, request=self.request)
+        view = api.content.get_view(
+            name='subsite_utils_view',
+            context=self.context,
+            request=self.request,
+        )
         subsite = view.get_subsite_folder()
-        if self.context == subsite:
-            body_classes+= ' subsite-root'
+        canonical = api.content.get_view(
+            name='plone_context_state',
+            context=self.context,
+            request=self.request,
+        ).canonical_object()
+        if canonical == subsite:
+            body_classes += ' subsite-root'
         if getattr(self.context, 'subsite_class', ''):
-            subsite_class_name = ' subsite-%s' % getattr(self.context, 'subsite_class')
-            body_classes+= subsite_class_name
+            subsite_class_name = ' subsite-{}'.format(
+                getattr(self.context, 'subsite_class'),
+            )
+            body_classes += subsite_class_name
         return body_classes

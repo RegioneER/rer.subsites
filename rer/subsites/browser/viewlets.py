@@ -37,6 +37,7 @@ class SubsiteViewletBase(ViewletBase):
             'viewlets_enabled',
             interface=IRERSubsitesSettings)
 
+
 class SubsiteTitleViewlet(SubsiteViewletBase):
     """
     viewlet with title
