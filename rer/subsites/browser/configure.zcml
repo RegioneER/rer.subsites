@@ -19,7 +19,7 @@
   <!-- viewlet titolo -->
   <browser:viewlet
       name="rer.subsite_title"
-      manager="plone.app.layout.viewlets.interfaces.IMainNavigation"
+      manager="plone.app.layout.viewlets.interfaces.IAboveContent"
       class=".viewlets.SubsiteTitleViewlet"
       layer="..interfaces.IRERSubsiteLayer"
       permission="zope2.View"
