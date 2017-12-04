@@ -24,7 +24,7 @@ class IRERSubsitesSettings(Interface):
     viewlets_enabled = schema.Bool(
         title=_(u"Enable viewlets"),
         required=False,
-        default=False
+        default=True
     )
 
 
