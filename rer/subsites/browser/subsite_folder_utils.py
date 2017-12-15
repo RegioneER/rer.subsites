@@ -92,4 +92,5 @@ class SubsiteUtilsView(BaseSubsiteView):
         return {
             'title': subsite.Title(),
             'subsite_class': subsite_class,
+            'url': subsite.absolute_url(),
         }
