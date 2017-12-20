@@ -1,5 +1,8 @@
 # -*- coding: utf-8 -*-
-from rer.erpolicy import logger
+import logging
+
+
+logger = logging.getLogger(__name__)
 
 
 default_profile = 'profile-rer.erpolicy:default'
