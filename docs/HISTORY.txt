@@ -5,7 +5,9 @@ Changelog
 ------------------
 
 - Added template elements and conditions needed for styling [nzambello]
-
+- Use AddSubsite permission to handle all subsite configuration
+  (enable/disable and customization form).
+  [cekk]
 
 1.3.1 (2017-01-10)
 ------------------
