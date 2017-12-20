@@ -44,7 +44,7 @@
    name="mark_subsite"
    class=".subsite_folder_utils.ToggleMarkSubsite"
    attribute="add_interface"
-   permission="cmf.ManagePortal"
+   permission="rer.subsites.permissions.AddRERSubsite"
    layer="..interfaces.IRERSubsiteLayer"
    />
 
@@ -53,7 +53,7 @@
    name="unmark_subsite"
    class=".subsite_folder_utils.ToggleMarkSubsite"
    attribute="remove_interface"
-   permission="cmf.ManagePortal"
+   permission="rer.subsites.permissions.AddRERSubsite"
    layer="..interfaces.IRERSubsiteLayer"
    />
 
@@ -62,7 +62,7 @@
    name="check_subsite_action_add"
    attribute="check_subsite_action_add"
    class=".subsite_folder_utils.CheckSubsiteAction"
-   permission="cmf.ManagePortal"
+   permission="rer.subsites.permissions.AddRERSubsite"
    layer="..interfaces.IRERSubsiteLayer"
    />
  <browser:page
@@ -70,7 +70,7 @@
    name="check_subsite_action_remove"
    attribute="check_subsite_action_remove"
    class=".subsite_folder_utils.CheckSubsiteAction"
-   permission="cmf.ManagePortal"
+   permission="rer.subsites.permissions.AddRERSubsite"
    layer="..interfaces.IRERSubsiteLayer"
    />
 
@@ -79,7 +79,7 @@
    for="..interfaces.IRERSubsiteEnabled"
    name="subsite_styles_form"
    class=".subsite_styles_form.SubsiteStylesForm"
-   permission="cmf.ManagePortal"
+   permission="rer.subsites.permissions.AddRERSubsite"
    layer="..interfaces.IRERSubsiteLayer"
    />
 

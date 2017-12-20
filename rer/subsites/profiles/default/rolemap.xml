@@ -3,7 +3,8 @@
   <permissions>
 	<permission name="rer.subsites: Add RERSubsite" acquire="False">
       <role name="Manager" />
-	  <role name="Contributor" />
+      <role name="Site Administrator" />
+	    <role name="Contributor" />
     </permission>
   </permissions>
 </rolemap>
