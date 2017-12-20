@@ -2,3 +2,5 @@ recursive-include rer *
 recursive-include docs *
 global-exclude *pyc
 include *.cfg
+exclude .installed.cfg
+exclude .mr.developer.cfg
