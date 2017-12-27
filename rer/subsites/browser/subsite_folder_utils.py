@@ -56,6 +56,7 @@ class ToggleMarkSubsite(BaseSubsiteView):
         messages = IStatusMessage(self.request)
         if IRERSubsiteEnabled.providedBy(obj):
             noLongerProvides(obj, IRERSubsiteEnabled)
+            obj.subsite_class = ''
             obj.reindexObject(idxs=['object_provides'])
             messages.addStatusMessage(u"Cartella non più subsite.",
                                       type='info')

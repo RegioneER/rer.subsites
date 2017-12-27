@@ -38,9 +38,11 @@ class LayoutPolicy(BaseView):
         ).canonical_object()
         if canonical == subsite:
             body_classes += ' subsite-root'
+        
         if getattr(self.context, 'subsite_class', ''):
             subsite_class_name = ' subsite-{}'.format(
                 getattr(self.context, 'subsite_class'),
             )
             body_classes += subsite_class_name
+        
         return body_classes
