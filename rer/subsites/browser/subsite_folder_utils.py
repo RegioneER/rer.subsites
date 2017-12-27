@@ -98,20 +98,9 @@ class SubsiteUtilsView(BaseSubsiteView):
         subsite = self.get_subsite_folder()
         if not subsite:
             return {}
-<<<<<<< HEAD
-        css_class = getattr(subsite, 'subsite_css_class', subsite.getId())
-        return {
-            'title': subsite.Title(),
-            'css_class': css_class,
-            'pin': '{0}/++resource++opr.theme/pins/pin-{1}.png'.format(
-                api.portal.get().absolute_url(),
-                css_class
-            )
-=======
         subsite_class = getattr(subsite, "subsite_class", '')
         return {
             'title': subsite.Title(),
             'subsite_class': subsite_class,
             'url': subsite.absolute_url(),
->>>>>>> new_features
         }
