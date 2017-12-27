@@ -4,8 +4,8 @@ Changelog
 1.3.4 (unreleased)
 ------------------
 
-- Nothing changed yet.
-
+- Added subsite css classes when enabling subsite.
+  [daniele]
 
 1.3.3 (2017-12-21)
 ------------------

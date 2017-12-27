@@ -8,6 +8,7 @@ from zope.component import getMultiAdapter
 
 
 class SubsiteViewletBase(ViewletBase):
+
     def __init__(self, context, request, view, manager):
         super(SubsiteViewletBase, self).__init__(
             context,
@@ -18,6 +19,9 @@ class SubsiteViewletBase(ViewletBase):
         self.subsite = self.getSubsiteObj()
 
     def render(self):
+        viewlet_enabled = self.is_viewlet_enabled()
+        if not viewlet_enabled:
+            return ""
         if self.subsite:
             return self.index()
         else:
@@ -28,6 +32,12 @@ class SubsiteViewletBase(ViewletBase):
             if IRERSubsiteEnabled.providedBy(elem):
                 return elem
         return None
+
+    def is_viewlet_enabled(self):
+        """ """
+        return api.portal.get_registry_record(
+            'viewlets_enabled',
+            interface=IRERSubsitesSettings)
 
 
 class SubsiteTitleViewlet(SubsiteViewletBase):
@@ -55,6 +65,11 @@ class SubsiteColorViewlet(SubsiteViewletBase):
     A Viewlet that allows to add some dynamic css in the  header
     """
     def render(self):
+
+        viewlet_enabled = self.is_viewlet_enabled()
+        if not viewlet_enabled:
+            return ""
+
         if not self.subsite:
             return ''
 

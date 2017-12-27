@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2017-10-26 14:54+0000\n"
+"POT-Creation-Date: 2017-11-17 11:57+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: Andrea Cecchi <andrea.cecchi@redturtle.net>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -13,6 +13,18 @@ msgstr ""
 "Language-Name: Italian\n"
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: rer.subsites\n"
+
+#: ./interfaces/settings.py:25
+msgid "Enable viewlets"
+msgstr "Abilita la visualizzazione delle viewlets"
+
+#: ./configure.zcml:29
+msgid "RER: Subsites"
+msgstr ""
+
+#: ./configure.zcml:37
+msgid "RER: Subsites uninstall"
+msgstr ""
 
 #: ./profiles/default/actions.xml
 msgid "Set as subsite"
@@ -26,6 +38,10 @@ msgstr "Abilita questa cartella come sottosito"
 #: ./profiles/default/actions.xml
 msgid "Subsite styles"
 msgstr "Stili sottositi"
+
+#: ./configure.zcml:29
+msgid "Subsites for ER portals"
+msgstr ""
 
 #: ./browser/controlpanel/controlpanel.py:13
 #: ./profiles/default/controlpanel.xml
@@ -41,7 +57,7 @@ msgid "Unset this folder as subsite"
 msgstr "Disabilita questa cartella come sottosito"
 
 #. Default: "Not a valid color"
-#: ./browser/subsite_styles_form.py:62
+#: ./browser/subsite_styles_form.py:64
 msgid "error_invalid_css_color"
 msgstr "Codice colore non valido "
 
@@ -55,23 +71,22 @@ msgstr "Inserisci una lista di stili css che verranno applicati nel sottosito e 
 msgid "help_subsites_settings_editform"
 msgstr "Configurazioni sottositi"
 
-#. Default: "Color of the subsite"
-#: ./interfaces/settings.py:28
-msgid "rer_subsites_color"
-msgstr "Colore del sottosito"
+#. Default: "Class"
+#: ./interfaces/settings.py:44
+msgid "rer_subsites_class"
+msgstr "Classe del sottosito"
 
-#. Default: "Insert an hexadecimal value for the subsite color. Use the # character before the value (for example: #FFFFFF)"
-#: ./interfaces/settings.py:29
-msgid "rer_subsites_color_help"
-msgstr "Inserisci un valore esadecimale per il colore del sottosito. Usa il carattere # prima del valore (per esempio: #FFFFFF)"
+#. Default: "Insert a class name to be associated to the subsite."
+#: ./interfaces/settings.py:45
+msgid "rer_subsites_class_help"
+msgstr "Inserisci il nome della classe da associare al sottosito"
 
 #. Default: "Image"
-#: ./interfaces/settings.py:39
+#: ./interfaces/settings.py:52
 msgid "rer_subsites_image"
 msgstr "Immagine"
 
 #. Default: "Insert an image for the viewlet with the subsite name."
-#: ./interfaces/settings.py:40
+#: ./interfaces/settings.py:53
 msgid "rer_subsites_image_help"
 msgstr "Inserisci un'immagine per la viewlet con il nome del nome del sottosito."
-

@@ -7,6 +7,8 @@ from rer.subsites.interfaces import IRERSubsiteUtilsView
 from zope.interface import alsoProvides
 from zope.interface import implementer
 from zope.interface import noLongerProvides
+from Products.statusmessages.interfaces import IStatusMessage
+from zope.interface import implements
 
 
 class BaseSubsiteView(BrowserView):
@@ -60,6 +62,7 @@ class ToggleMarkSubsite(BaseSubsiteView):
         obj = self.get_canonical()
         if IRERSubsiteEnabled.providedBy(obj):
             noLongerProvides(obj, IRERSubsiteEnabled)
+            obj.subsite_class = ''
             obj.reindexObject(idxs=['object_provides'])
             api.portal.show_message(
                 message=u'Cartella non più subsite.',
@@ -95,6 +98,7 @@ class SubsiteUtilsView(BaseSubsiteView):
         subsite = self.get_subsite_folder()
         if not subsite:
             return {}
+<<<<<<< HEAD
         css_class = getattr(subsite, 'subsite_css_class', subsite.getId())
         return {
             'title': subsite.Title(),
@@ -103,4 +107,11 @@ class SubsiteUtilsView(BaseSubsiteView):
                 api.portal.get().absolute_url(),
                 css_class
             )
+=======
+        subsite_class = getattr(subsite, "subsite_class", '')
+        return {
+            'title': subsite.Title(),
+            'subsite_class': subsite_class,
+            'url': subsite.absolute_url(),
+>>>>>>> new_features
         }

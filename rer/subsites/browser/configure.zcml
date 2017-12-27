@@ -92,4 +92,12 @@
    layer="..interfaces.IRERSubsiteLayer"
    />
 
+<browser:page
+  name="plone_layout"
+  for="*"
+  permission="zope.Public"
+  class=".layout.LayoutPolicy"
+  layer="..interfaces.IRERSubsiteLayer"
+  />
+
 </configure>

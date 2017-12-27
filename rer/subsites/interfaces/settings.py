@@ -21,6 +21,12 @@ class IRERSubsitesSettings(Interface):
         required=False,
     )
 
+    viewlets_enabled = schema.Bool(
+        title=_(u"Enable viewlets"),
+        required=False,
+        default=True
+    )
+
 
 class IRERSubsiteEnabled(Interface):
 
@@ -35,11 +41,18 @@ class IRERSubsiteEnabled(Interface):
         required=False,
     )
 
+    subsite_class = schema.TextLine(
+        title=_(u'rer_subsites_class', default=u'Class'),
+        description=_(
+            u'rer_subsites_class_help',
+            default=u"Insert a class name to be associated to the subsite."),
+        required=False,
+    )
+
     image = NamedBlobImage(
         title=_(u'rer_subsites_image', default=u'Image'),
         description=_(
             u'rer_subsites_image_help',
             default=u'Insert an image for the viewlet with the subsite name.'),
         required=False,
-
     )

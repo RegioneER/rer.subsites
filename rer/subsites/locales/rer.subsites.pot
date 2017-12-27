@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2017-10-26 14:54+0000\n"
+"POT-Creation-Date: 2017-11-17 11:57+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,6 +17,18 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: rer.subsites\n"
 
+#: ./interfaces/settings.py:25
+msgid "Enable viewlets"
+msgstr ""
+
+#: ./configure.zcml:29
+msgid "RER: Subsites"
+msgstr ""
+
+#: ./configure.zcml:37
+msgid "RER: Subsites uninstall"
+msgstr ""
+
 #: ./profiles/default/actions.xml
 msgid "Set as subsite"
 msgstr ""
@@ -28,6 +40,10 @@ msgstr ""
 #: ./interfaces/settings.py:15
 #: ./profiles/default/actions.xml
 msgid "Subsite styles"
+msgstr ""
+
+#: ./configure.zcml:29
+msgid "Subsites for ER portals"
 msgstr ""
 
 #: ./browser/controlpanel/controlpanel.py:13
@@ -44,7 +60,7 @@ msgid "Unset this folder as subsite"
 msgstr ""
 
 #. Default: "Not a valid color"
-#: ./browser/subsite_styles_form.py:62
+#: ./browser/subsite_styles_form.py:64
 msgid "error_invalid_css_color"
 msgstr ""
 
@@ -58,23 +74,22 @@ msgstr ""
 msgid "help_subsites_settings_editform"
 msgstr ""
 
-#. Default: "Color of the subsite"
-#: ./interfaces/settings.py:28
-msgid "rer_subsites_color"
+#. Default: "Class"
+#: ./interfaces/settings.py:44
+msgid "rer_subsites_class"
 msgstr ""
 
-#. Default: "Insert an hexadecimal value for the subsite color. Use the # character before the value (for example: #FFFFFF)"
-#: ./interfaces/settings.py:29
-msgid "rer_subsites_color_help"
+#. Default: "Insert a class name to be associated to the subsite."
+#: ./interfaces/settings.py:45
+msgid "rer_subsites_class_help"
 msgstr ""
 
 #. Default: "Image"
-#: ./interfaces/settings.py:39
+#: ./interfaces/settings.py:52
 msgid "rer_subsites_image"
 msgstr ""
 
 #. Default: "Insert an image for the viewlet with the subsite name."
-#: ./interfaces/settings.py:40
+#: ./interfaces/settings.py:53
 msgid "rer_subsites_image_help"
 msgstr ""
-
