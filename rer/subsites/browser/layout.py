@@ -31,14 +31,21 @@ class LayoutPolicy(BaseView):
             request=self.request,
         )
         subsite = view.get_subsite_folder()
+
+        if not subsite:
+	    return body_classes
+
         canonical = api.content.get_view(
             name='plone_context_state',
             context=self.context,
             request=self.request,
         ).canonical_object()
+
         if canonical == subsite:
             body_classes += ' subsite-root'
-        
+        else:
+	    body_classes += ' subsite-child'
+
         if getattr(self.context, 'subsite_class', ''):
             subsite_class_name = ' subsite-{}'.format(
                 getattr(self.context, 'subsite_class'),
