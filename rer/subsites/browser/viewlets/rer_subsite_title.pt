@@ -1,7 +1,7 @@
 <div id="subsite-title"
      tal:define="subsite nocall:view/subsite"
      class="${view/get_css_class}">
-    <div class="subsite-title">
+    <div class="subsite-title-content">
         <div class="subsite-title-container">
             <h2>${subsite/Title}</h2>
         </div>
