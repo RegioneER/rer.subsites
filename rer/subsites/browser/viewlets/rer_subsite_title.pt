@@ -5,15 +5,15 @@
         <div class="subsite-title-container">
             <h2>${subsite/Title}</h2>
         </div>
-    </div>
-    <p class="subsite-description"
-       tal:condition="subsite/Description">${subsite/Description}</p>
-    <div class="subsite-anchor">
-        <div class="subsite-anchor-container">
-            <a href="#portal-column-two" title="In questa sezione">
-                <span class="subsite-anchor-icon"></span>
-                <span class="subsite-anchor-label">In questa sezione</span>
-            </a>
+        <p class="subsite-description"
+           tal:condition="subsite/Description">${subsite/Description}</p>
+        <div class="subsite-anchor">
+            <div class="subsite-anchor-container">
+                <a href="#portal-column-two" title="In questa sezione">
+                    <span class="subsite-anchor-label">In questa sezione</span>
+                    <span class="subsite-anchor-icon"></span>
+                </a>
+            </div>
         </div>
     </div>
 </div>
