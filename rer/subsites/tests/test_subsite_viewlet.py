@@ -43,14 +43,14 @@ class TestSubsiteViewlet(unittest.TestCase):
         """
         """
         view = self.subsite.restrictedTraverse('view')()
-        self.assertTrue('id="subsiteTitle"' in view)
+        self.assertTrue('id="subsite-title"' in view)
 
     def test_show_title_viewlet_in_subsite_children(self):
         """
         """
         view = self.document.restrictedTraverse('view')()
         subsite_title = '<h2>{0}</h2>'.format(self.subsite.Title())
-        self.assertTrue('id="subsiteTitle"' in view)
+        self.assertTrue('id="subsite-title"' in view)
         self.assertTrue(subsite_title in view)
 
     def test_show_styles_viewlet_in_subsite(self):
@@ -71,7 +71,7 @@ class TestSubsiteViewlet(unittest.TestCase):
         self.unmark_view()
         view = self.subsite.restrictedTraverse('view')()
         self.assertFalse(self.subsite_color in view)
-        self.assertFalse('id="subsiteTitle"' in view)
+        self.assertFalse('id="subsite-title"' in view)
         self.mark_view()
 
     def test_not_show_viewlets_in_disabled_subsite_children(self):
@@ -81,6 +81,6 @@ class TestSubsiteViewlet(unittest.TestCase):
         view = self.document.restrictedTraverse('view')()
         subsite_title = '<h2>{0}</h2>'.format(self.subsite.Title())
         self.assertFalse(self.subsite_color in view)
-        self.assertFalse('id="subsiteTitle"' in view)
+        self.assertFalse('id="subsite-title"' in view)
         self.assertFalse(subsite_title in view)
         self.mark_view()

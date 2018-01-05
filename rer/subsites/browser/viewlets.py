@@ -88,7 +88,7 @@ class SubsiteColorViewlet(SubsiteViewletBase):
             return ''
         subsite_url = self.subsite.absolute_url()
         styles = []
-        css = '#subsiteTitle {'
+        css = '#subsite-title {'
         if color:
             styles.append('background-color:{0}'.format(color))
         if image:
