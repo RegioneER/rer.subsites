@@ -8,12 +8,10 @@
         <p class="subsite-description"
            tal:condition="subsite/Description">${subsite/Description}</p>
         <div class="subsite-anchor">
-            <div class="subsite-anchor-container">
-                <a href="#portal-column-two" title="In questa sezione">
-                    <span class="subsite-anchor-label">In questa sezione</span>
-                    <span class="subsite-anchor-icon"></span>
-                </a>
-            </div>
+            <a href="#portal-column-two" title="In questa sezione">
+                <span class="subsite-anchor-label">In questa sezione</span>
+                <span class="subsite-anchor-icon"></span>
+            </a>
         </div>
     </div>
 </div>
