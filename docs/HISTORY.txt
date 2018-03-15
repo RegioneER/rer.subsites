@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.3.7 (unreleased)
+1.3.7 (2018-03-15)
 ------------------
 
 - Added icon for title viewlet link in template [nzambello]
