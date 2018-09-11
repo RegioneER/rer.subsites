@@ -4,14 +4,13 @@ from plone import api
 from plone.directives.form import SchemaForm
 from rer.subsites.interfaces import IRERSubsiteEnabled
 from z3c.form import button
-from z3c.form import field  # , form
+from z3c.form import field
 from z3c.form.interfaces import WidgetActionExecutionError
 from zope.component import adapter
 from zope.interface import implementer
 from zope.interface import Invalid
 
 import re
-# from collective.z3cform.colorpicker.colorpicker import ColorpickerFieldWidget
 
 
 @implementer(IRERSubsiteEnabled)
@@ -19,6 +18,7 @@ import re
 class SubsiteStylesFormAdapter(object):
     """
     """
+
     def __init__(self, context):
         """ To basic stuff
         """
@@ -71,8 +71,8 @@ class SubsiteStylesForm(SchemaForm):
                     _(
                         'error_invalid_css_color',
                         default='Not a valid color'),
-                    )
                 )
+            )
 
     @button.buttonAndHandler(u'Salva', name='save')
     def handleSubmit(self, action):

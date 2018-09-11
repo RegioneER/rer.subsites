@@ -14,7 +14,6 @@
    />
 
   <include package="Products.CMFPlone" />
-  <include package="collective.z3cform.colorpicker" />
 
   <!-- Include the sub-packages that use their own configure.zcml files. -->
   <include package=".browser" />
@@ -33,6 +32,13 @@
       title="RER: Subsites uninstall"
       directory="profiles/uninstall"
       description="Subsites for ER portals"
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+  <genericsetup:registerProfile
+      name="remove_colorpicker"
+      title="RER: Subsites remove_colorpicker"
+      directory="profiles/remove_colorpicker"
+      description="Remove colorpicker"
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
 

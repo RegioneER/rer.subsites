@@ -11,16 +11,16 @@ setup(name='rer.subsites',
       version=version,
       description="Subsites for ER portals",
       long_description=open("README.rst").read() + "\n" +
-                       open(os.path.join("docs", "HISTORY.txt")).read(),
+      open(os.path.join("docs", "HISTORY.txt")).read(),
       # Get more strings from
       # http://pypi.python.org/pypi?%3Aaction=list_classifiers
       classifiers=[
-        'Framework :: Plone',
-        'Framework :: Plone :: 5.0',
-        'Framework :: Plone :: 5.1',
-        'Intended Audience :: Developers',
-        'License :: OSI Approved :: GNU General Public License (GPL)',
-        ],
+          'Framework :: Plone',
+          'Framework :: Plone :: 5.0',
+          'Framework :: Plone :: 5.1',
+          'Intended Audience :: Developers',
+          'License :: OSI Approved :: GNU General Public License (GPL)',
+      ],
       keywords='',
       author='RedTurtle Technology',
       author_email='sviluppoplone@redturtle.it',
@@ -33,7 +33,6 @@ setup(name='rer.subsites',
       install_requires=['setuptools',
                         'plone.directives.form',
                         'plone.api',
-                        'collective.z3cform.colorpicker',
                         ],
       extras_require={
           'test': [
@@ -42,7 +41,7 @@ setup(name='rer.subsites',
               'plone.app.contenttypes',
               'plone.app.robotframework[debug]',
               'unittest2',
-              ]
+          ]
       },
       entry_points="""
       # -*- Entry points: -*-
