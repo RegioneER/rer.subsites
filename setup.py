@@ -5,7 +5,7 @@ This module contains the tool of rer.subsites
 import os
 from setuptools import setup, find_packages
 
-version = '1.3.8.dev0'
+version = '1.4.0'
 
 setup(name='rer.subsites',
       version=version,
