@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from plone import api
 from plone.app.layout.globals.layout import LayoutPolicy as BaseView
 
@@ -33,7 +34,7 @@ class LayoutPolicy(BaseView):
         subsite = view.get_subsite_folder()
 
         if not subsite:
-	    return body_classes
+            return body_classes
 
         canonical = api.content.get_view(
             name='plone_context_state',
@@ -44,12 +45,12 @@ class LayoutPolicy(BaseView):
         if canonical == subsite:
             body_classes += ' subsite-root'
         else:
-	    body_classes += ' subsite-child'
+            body_classes += ' subsite-child'
 
         if getattr(self.context, 'subsite_class', ''):
             subsite_class_name = ' subsite-{}'.format(
                 getattr(self.context, 'subsite_class'),
             )
             body_classes += subsite_class_name
-        
+
         return body_classes

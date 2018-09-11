@@ -7,8 +7,6 @@ from rer.subsites.interfaces import IRERSubsiteUtilsView
 from zope.interface import alsoProvides
 from zope.interface import implementer
 from zope.interface import noLongerProvides
-from Products.statusmessages.interfaces import IStatusMessage
-from zope.interface import implements
 
 
 class BaseSubsiteView(BrowserView):
