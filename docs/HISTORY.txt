@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.4.1 (unreleased)
+1.4.1 (2018-09-21)
 ------------------
 
 - Add timestamp in image url to bypass caching when the image is updated.
