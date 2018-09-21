@@ -64,6 +64,7 @@ class SubsiteColorViewlet(SubsiteViewletBase):
     """
     A Viewlet that allows to add some dynamic css in the  header
     """
+
     def render(self):
 
         viewlet_enabled = self.is_viewlet_enabled()
@@ -92,8 +93,13 @@ class SubsiteColorViewlet(SubsiteViewletBase):
         if color:
             styles.append('background-color:{0}'.format(color))
         if image:
+            version = getattr(self.subsite, 'styles_last_modified', '')
             styles.append(
-                'background-image:url({0}/@@images/image)'.format(subsite_url))
+                'background-image:url({0}/@@images/image?v={1})'.format(
+                    subsite_url,
+                    version
+                )
+            )
         css += ';'.join(styles)
         css += '}'
         styles = []

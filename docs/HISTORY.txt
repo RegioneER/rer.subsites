@@ -4,7 +4,8 @@ Changelog
 1.4.1 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Add timestamp in image url to bypass caching when the image is updated.
+  [cekk]
 
 
 1.4.0 (2018-09-11)

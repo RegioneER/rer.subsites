@@ -1,5 +1,6 @@
 # -*- coding=utf-8 -*-
 from .. import subsitesMessageFactory as _
+from datetime import datetime
 from plone import api
 from plone.directives.form import SchemaForm
 from rer.subsites.interfaces import IRERSubsiteEnabled
@@ -59,6 +60,8 @@ class SubsiteStylesForm(SchemaForm):
         self.context.subsite_color = data.get('subsite_color')
         self.context.image = data.get('image')
         self.context.subsite_class = data.get('subsite_class')
+        # update last modified date
+        self.context.styles_last_modified = datetime.now().strftime('%Y%m%d%H%M%S')  # noqa
 
     def additional_validation(self, data):
         if not data.get('subsite_color', ''):
