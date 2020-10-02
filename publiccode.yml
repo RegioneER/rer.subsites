@@ -27,15 +27,24 @@ description:
       - configurazione avanzata per gli stili
     genericName: Plone addon
     longDescription: >
+      Plugin per Plone che consente di impostare dei sottositi all’interno di un
+      sito. Un sottosito è una porzione di sito (da una cartella in poi, per
+      tutti i suoi figli) che ha un layout personalizzato con una immagine e/o
+      un colore sempre presente sotto alla testata del sito ed eventuali altri
+      stili personalizzati. Ad es. si può fare in modo che quando si visualizza
+      il sottosito da “mobile” appaia in testata un’àncora (“In questa sezione”)
+      che rimanda al contenuto della colonna di destra, che sta sotto al
+      contenuto principale della pagina, così da consentire un accesso immediato
+      al menù contestuale del sottosito.
+
       ## Features
-
-
-      - Nessun Content Type aggiuntivo
 
       - Viewlet con il colore e l'immagine di sfondo personalizzabili del
       sottosito in ogni figlio di questo
 
-      - Pannello di controllo dove impostare stili aggiuntiivi per il sottosito
+      - Pannello di controllo dove impostare stili aggiuntivi per il sottosito
+      
+      - Nessun Content Type aggiuntivo
 
 
       ## Abilitare un sottosito
@@ -49,7 +58,7 @@ description:
 
 
       I tipi di contenuto folderish contrassegnati come sottositi hanno una
-      nuova azione chiamata "Disabilita come sottoosito" per deselezionarli come
+      nuova azione chiamata "Disabilita come sottosito" per deselezionarli come
       tali.
 
 
@@ -78,7 +87,11 @@ description:
 
       Questo è utile per esempio se si volesse che tutte le intestazioni (h1 o
       h2) nel sottosito avessero il colore impostato per questo.
-    shortDescription: Sottositi per i portali della Regione Emilia-Romagna
+    shortDescription: Consente di definire porzioni di sito con un layout personalizzato
+    screenshots: 
+      - docs/Subsite_Homepage.JPG
+      - docs/Subsite_Vista-Mobile_Pagina-interna.jpg
+      - docs/Subsite_Configurazione.jpg
 developmentStatus: stable
 it:
   riuso:
@@ -113,7 +126,7 @@ maintenance:
       until: '2020-08-31'
       website: 'https://www.redturtle.it/'
   type: contract
-name: rer.subsites
+name: Sottositi per CMS Plone
 platforms:
   - web
 releaseDate: '2011-03-14'
