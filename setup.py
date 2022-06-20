@@ -31,7 +31,6 @@ setup(name='rer.subsites',
       include_package_data=True,
       zip_safe=False,
       install_requires=['setuptools',
-                        'plone.directives.form',
                         'plone.api',
                         ],
       extras_require={

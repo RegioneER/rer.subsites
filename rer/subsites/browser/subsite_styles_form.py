@@ -2,10 +2,11 @@
 from .. import subsitesMessageFactory as _
 from datetime import datetime
 from plone import api
-from plone.directives.form import SchemaForm
+from plone.autoform.form import AutoExtensibleForm
 from rer.subsites.interfaces import IRERSubsiteEnabled
 from z3c.form import button
 from z3c.form import field
+from z3c.form import form
 from z3c.form.interfaces import WidgetActionExecutionError
 from zope.component import adapter
 from zope.interface import implementer
@@ -29,7 +30,7 @@ class SubsiteStylesFormAdapter(object):
         self.subsite_class = getattr(context, 'subsite_class', '')
 
 
-class SubsiteStylesForm(SchemaForm):
+class SubsiteStylesForm(AutoExtensibleForm, form.Form):
 
     """ Dinamically built form
     """
