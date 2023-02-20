@@ -89,7 +89,7 @@ description:
       h2) nel sottosito avessero il colore impostato per questo.
     shortDescription: Consente di definire porzioni di sito con un layout personalizzato
     screenshots: 
-      - docs/Subsite_Homepage.JPG
+      - docs/Subsite_Homepage.jpg
       - docs/Subsite_Vista-Mobile_Pagina-interna.jpg
       - docs/Subsite_Configurazione.jpg
 developmentStatus: stable
