@@ -25,7 +25,6 @@ description:
       - stili personalizzabili
       - testata per i sottositi
       - configurazione avanzata per gli stili
-    genericName: Plone addon
     longDescription: >
       Plugin per Plone che consente di impostare dei sottositi all’interno di un
       sito. Un sottosito è una porzione di sito (da una cartella in poi, per
