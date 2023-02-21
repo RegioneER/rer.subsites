@@ -2,7 +2,7 @@
 # metadata file that makes public software easily discoverable.
 # More info at https://github.com/italia/publiccode.yml
 
-publiccodeYmlVersion: '0.2'
+publiccodeYmlVersion: '0.3'
 categories:
   - application-development
   - communications
@@ -25,7 +25,6 @@ description:
       - stili personalizzabili
       - testata per i sottositi
       - configurazione avanzata per gli stili
-    genericName: Plone addon
     longDescription: >
       Plugin per Plone che consente di impostare dei sottositi all’interno di un
       sito. Un sottosito è una porzione di sito (da una cartella in poi, per
@@ -89,7 +88,7 @@ description:
       h2) nel sottosito avessero il colore impostato per questo.
     shortDescription: Consente di definire porzioni di sito con un layout personalizzato
     screenshots: 
-      - docs/Subsite_Homepage.JPG
+      - docs/Subsite_Homepage.jpg
       - docs/Subsite_Vista-Mobile_Pagina-interna.jpg
       - docs/Subsite_Configurazione.jpg
 developmentStatus: stable
